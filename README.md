@@ -9,12 +9,6 @@ Kali Linux Offensive Security Certified Professional Survival Exam Guide Playboo
    \___/\____/ \____/\_|     \____/ \__,_|_|    \_/ |_| \_/ \__,_|_|  \____/\__,_|_|\__,_|\___|
 </pre>
 
-- [Install](#install)
-- [CLI](#cli)
-- [Highights](#highights)
-- [Usage](#usage)
-- [API](#api)
-  * [toc.plugin](#tocplugin)
 ## Table of Contents
 - [OSCP Course Review](#OSCP_Course_Review)
 - [OSCP Inspired VMs and Walkthroughs](#OSCP_Inspired_VMs_and_Walkthroughs)
