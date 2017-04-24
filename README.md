@@ -1,12 +1,13 @@
 # OSCP-Survival-Guide
-Kali Linux Offensive Security Certified Professional Survival Exam Guide Playbook   
+Kali Linux Offensive Security Certified Professional Survival Exam Guide Playbook
+<pre>
    _____ _____ _____ ______   _____                  _            _   _____       _     _      
   |  _  /  ___/  __ \| ___ \ /  ___|                (_)          | | |  __ \     (_)   | |     
   | | | \ `--.| /  \/| |_/ / \ `--. _   _ _ ____   _____   ____ _| | | |  \/_   _ _  __| | ___ 
   | | | |`--. \ |    |  __/   `--. \ | | | '__\ \ / / \ \ / / _` | | | | __| | | | |/ _` |/ _ \
   \ \_/ /\__/ / \__/\| |     /\__/ / |_| | |   \ V /| |\ V / (_| | | | |_\ \ |_| | | (_| |  __/
    \___/\____/ \____/\_|     \____/ \__,_|_|    \_/ |_| \_/ \__,_|_|  \____/\__,_|_|\__,_|\___|
-                                                                                             
+</pre>
 
 **Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
