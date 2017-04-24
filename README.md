@@ -8,40 +8,40 @@ Kali Linux Offensive Security Certified Professional Survival Exam Guide
  \___/\____/ \____/\_|     \____/ \__,_|_|    \_/ |_| \_/ \__,_|_|  \____/\__,_|_|\__,_|\___|
                                                                                              
                                                                                       
-Contents
-OSCP Course Review
+# Table of Contents
+[Link to Header](#OSCP-Course-Review)OSCP Course Review
 OSCP Inspired VMs and Walkthroughs
 Cheat Sheets
 Essentials
 Kali Linux
 Information Gathering & Vulnerability Scanning
-●	Passive Information Gathering
-●	Active Information Gathering
-●	Port Scanning
-●	Enumeration
-●	HTTP Enumeration
+⋅⋅*Passive Information Gathering
+⋅⋅*Active Information Gathering
+⋅⋅*Port Scanning
+⋅⋅*Enumeration
+⋅⋅*HTTP Enumeration
 Buffer Overflows, Exploits and Shells
-●	Exploits
-●	Shells
+⋅⋅*Exploits
+⋅⋅*Shells
 File Transfers
-●	Uploading Files
+⋅⋅*Uploading Files
 Privilege Escalation
-●	Linux Privilege Escalation
-●	Windows Privilege Escalation
+⋅⋅*Linux Privilege Escalation
+⋅⋅*Windows Privilege Escalation
 Client, Web and Password Attacks
-●	Client Attacks
-●	Web Attacks
-●	File Inclusion Vulnerabilities
-●	Database Vulnerabilities
-●	Password Attacks
-●	Password Hash Attacks
+⋅⋅*Client Attacks
+⋅⋅*Web Attacks
+⋅⋅*File Inclusion Vulnerabilities
+⋅⋅*Database Vulnerabilities
+⋅⋅*Password Attacks
+⋅⋅*Password Hash Attacks
 Networking, Pivoting and Tunneling
 The Metasploit Framework
 Bypassing Antivirus Software
 
 
 
-<span id="_d5in22sbolyc" class="anchor"><span id="_Toc480741797" class="anchor"></span></span>OSCP Course Review
+#OSCP Course Review
 ================================================================================================================
 
 -   Offensive Security’s PWB and OSCP — My Experience  
