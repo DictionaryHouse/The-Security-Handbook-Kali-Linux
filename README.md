@@ -181,10 +181,10 @@ OSCP Course Review
 ========================================================================================================
 
 -   Set the Target IP Address to the $ip system variable  
-    export ip=192.168.1.100
+    `export ip=192.168.1.100`
 
 -   Find the location of a file  
-    locate sbd.exe
+    `locate sbd.exe`
 
 -   Search through directories in the $PATH environment variable  
     which sbd
