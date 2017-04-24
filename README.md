@@ -1,47 +1,47 @@
 # OSCP-Survival-Guide
-Kali Linux Offensive Security Certified Professional Survival Exam Guide 
- _____ _____ _____ ______   _____                  _            _   _____       _     _      
-|  _  /  ___/  __ \| ___ \ /  ___|                (_)          | | |  __ \     (_)   | |     
-| | | \ `--.| /  \/| |_/ / \ `--. _   _ _ ____   _____   ____ _| | | |  \/_   _ _  __| | ___ 
-| | | |`--. \ |    |  __/   `--. \ | | | '__\ \ / / \ \ / / _` | | | | __| | | | |/ _` |/ _ \
-\ \_/ /\__/ / \__/\| |     /\__/ / |_| | |   \ V /| |\ V / (_| | | | |_\ \ |_| | | (_| |  __/
- \___/\____/ \____/\_|     \____/ \__,_|_|    \_/ |_| \_/ \__,_|_|  \____/\__,_|_|\__,_|\___|
+Kali Linux Offensive Security Certified Professional Survival Exam Guide Playbook   
+   _____ _____ _____ ______   _____                  _            _   _____       _     _      
+  |  _  /  ___/  __ \| ___ \ /  ___|                (_)          | | |  __ \     (_)   | |     
+  | | | \ `--.| /  \/| |_/ / \ `--. _   _ _ ____   _____   ____ _| | | |  \/_   _ _  __| | ___ 
+  | | | |`--. \ |    |  __/   `--. \ | | | '__\ \ / / \ \ / / _` | | | | __| | | | |/ _` |/ _ \
+  \ \_/ /\__/ / \__/\| |     /\__/ / |_| | |   \ V /| |\ V / (_| | | | |_\ \ |_| | | (_| |  __/
+   \___/\____/ \____/\_|     \____/ \__,_|_|    \_/ |_| \_/ \__,_|_|  \____/\__,_|_|\__,_|\___|
                                                                                              
-                                                                                      
-# Table of Contents
-[Link to Header](#OSCP-Course-Review)OSCP Course Review
-OSCP Inspired VMs and Walkthroughs
-Cheat Sheets
-Essentials
-Kali Linux
-Information Gathering & Vulnerability Scanning
+
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [OSCP-Survival-Guide](#)
+- [Table of Contents](#)
+- [OSCP Course Review](#)
+- [OSCP Inspired VMs and Walkthroughs](#)
+- [Cheat Sheets](#)
+- [Essentials](#)
+- [Kali Linux](#)
+- [Information Gathering & Vulnerability Scanning](#)
 ⋅⋅*Passive Information Gathering
 ⋅⋅*Active Information Gathering
 ⋅⋅*Port Scanning
 ⋅⋅*Enumeration
 ⋅⋅*HTTP Enumeration
-Buffer Overflows, Exploits and Shells
+- [Buffer Overflows, Exploits and Shells](#)
 ⋅⋅*Exploits
 ⋅⋅*Shells
-File Transfers
-⋅⋅*Uploading Files
-Privilege Escalation
+- [File Transfers](#)
+- [Privilege Escalation](#)
 ⋅⋅*Linux Privilege Escalation
 ⋅⋅*Windows Privilege Escalation
-Client, Web and Password Attacks
+- [Client, Web and Password Attacks](#)
 ⋅⋅*Client Attacks
 ⋅⋅*Web Attacks
 ⋅⋅*File Inclusion Vulnerabilities
 ⋅⋅*Database Vulnerabilities
 ⋅⋅*Password Attacks
 ⋅⋅*Password Hash Attacks
-Networking, Pivoting and Tunneling
-The Metasploit Framework
-Bypassing Antivirus Software
+- [Networking, Pivoting and Tunneling](#)
+- [The Metasploit Framework](#)
+- [Bypassing Antivirus Software](#)
 
-
-
-#OSCP Course Review
+OSCP Course Review
 ================================================================================================================
 
 -   Offensive Security’s PWB and OSCP — My Experience  
