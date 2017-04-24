@@ -1817,8 +1817,6 @@ OSCP Course Review
         &lt;port\_of\_your\_app&gt; &lt;server\_ip\_addr&gt;:80  
         stunnel
 
-<img src="media/image5.png" width="624" height="356" />
-
 -   Tunnel Remote Desktop (RDP) from a Popped Windows machine to your
     network
 
