@@ -10,34 +10,34 @@ Kali Linux Offensive Security Certified Professional Survival Exam Guide Playboo
 </pre>
 
 ## Table of Contents
-- [OSCP Course Review](#OSCP-Course-Review)
-- [OSCP Inspired VMs and Walkthroughs](#OSCP-Inspired-VMs-and-Walkthroughs)
-- [Cheat Sheets](#Cheat-Sheets)
-- [Essentials](#Essentials)
-- [Kali Linux](#Kali-Linux)
-- [Information Gathering & Vulnerability Scanning](#Information-Gathering--Vulnerability-Scanning)
-  * [Passive Information Gathering](#Passive-Information-Gathering)
-  * [Active Information Gathering](#Active-Information-Gathering)
-  * [Port Scanning](#Port-Scanning)
-  * [Enumeration](#Enumeration)
-  * [HTTP Enumeration](#HTTP-Enumeration)
-- [Buffer Overflows, Exploits and Shells](#Buffer-Overflows-Exploits-and-Shells)
-  * [Exploits](#Exploits)
-  * [Shells](#Shells)
-- [File Transfers](#File-Transfers)
-- [Privilege Escalation](#Privilege-Escalation)
-  * [Linux Privilege Escalation](#Linux-Privilege-Escalation)
-  * [Windows Privilege Escalation](#Windows-Privilege-Escalation)
-- [Client, Web and Password Attacks](#Client-Web-and-Password-Attacks)
-  * [Client Attacks](#Client-Attacks)
-  * [Web Attacks](#Web-Attacks)
-  * [File Inclusion Vulnerabilities LFI/RFI](#File-Inclusion-Vulnerabilities)
-  * [Database Vulnerabilities](#Database-Vulnerabilities)
-  * [Password Attacks](#Password-Attacks)
-  * [Password Hash Attacks](#Password-Hash-Attacks)
-- [Networking, Pivoting and Tunneling](#Networking-Pivoting-and-Tunneling)
-- [The Metasploit Framework](#The-Metasploit-Framework)
-- [Bypassing Antivirus Software](#Bypassing-Antivirus-Software)
+- [OSCP Course Review](#oscp-course-review)
+- [OSCP Inspired VMs and Walkthroughs](#oscp-inspired-vms-and-walkthroughs)
+- [Cheat Sheets](#cheat-sheets)
+- [Essentials](#essentials)
+- [Kali Linux](#kali-linux)
+- [Information Gathering & Vulnerability Scanning](#information-gathering--vulnerability-scanning)
+  * [Passive Information Gathering](#passive-information-gathering)
+  * [Active Information Gathering](#active-information-gathering)
+  * [Port Scanning](#port-scanning)
+  * [Enumeration](#enumeration)
+  * [HTTP Enumeration](#http-enumeration)
+- [Buffer Overflows, Exploits and Shells](#buffer-overflows-exploits-and-shells)
+  * [Exploits](#exploits)
+  * [Shells](#shells)
+- [File Transfers](#file-transfers)
+- [Privilege Escalation](#privilege-escalation)
+  * [Linux Privilege Escalation](#linux-privilege-escalation)
+  * [Windows Privilege Escalation](#windows-privilege-escalation)
+- [Client, Web and Password Attacks](#client-web-and-password-attacks)
+  * [Client Attacks](#client-attacks)
+  * [Web Attacks](#web-attacks)
+  * [File Inclusion Vulnerabilities LFI/RFI](#file-inclusion-vulnerabilities)
+  * [Database Vulnerabilities](#database-vulnerabilities)
+  * [Password Attacks](#password-attacks)
+  * [Password Hash Attacks](#password-hash-attacks)
+- [Networking, Pivoting and Tunneling](#networking-pivoting-and-tunneling)
+- [The Metasploit Framework](#the-metasploit-framework)
+- [Bypassing Antivirus Software](#bypassing-antivirus-software)
 
 OSCP Course Review
 ================================================================================================================
@@ -1770,22 +1770,17 @@ OSCP Course Review
         \# bindadress bindport connectaddress connectport  
         w.x.y.z 53 a.b.c.d 80
 
-<img src="media/image1.png" width="555" height="429" />
-
 -   SSH Local Port Forwarding: supports bi-directional communication
     channels
 
     -   ssh &lt;gateway&gt; -L &lt;local port to listen&gt;:&lt;remote
         host&gt;:&lt;remote port&gt;
 
-<img src="media/image2.png" width="501" height="360" />
-
 -   SSH Remote Port Forwarding: Suitable for popping a remote shell on
     an internal non routable network
 
     -   ssh &lt;gateway&gt; -R &lt;remote port to bind&gt;:&lt;local
         host&gt;:&lt;local port&gt;  
-        <img src="media/image3.png" width="455" height="260" />
 
 -   SSH Dynamic Port Forwarding: create a SOCKS4 proxy on our local
     attacking box to tunnel ALL incoming traffic to ANY host in the DMZ
@@ -1793,8 +1788,6 @@ OSCP Course Review
 
     -   ssh -D &lt;local proxy port&gt; -p &lt;remote port&gt;
         &lt;target&gt;
-
-<img src="media/image4.png" width="624" height="362" />
 
 -   Proxychains - Perform nmap scan within a DMZ from an external
     computer
