@@ -10,34 +10,34 @@ Kali Linux Offensive Security Certified Professional Survival Exam Guide Playboo
 </pre>
 
 ## Table of Contents
-- [OSCP Course Review](#OSCP_Course_Review)
-- [OSCP Inspired VMs and Walkthroughs](#OSCP_Inspired_VMs_and_Walkthroughs)
-- [Cheat Sheets](#Cheat_Sheets)
+- [OSCP Course Review](#OSCP-Course-Review)
+- [OSCP Inspired VMs and Walkthroughs](#OSCP-Inspired-VMs-and-Walkthroughs)
+- [Cheat Sheets](#Cheat-Sheets)
 - [Essentials](#Essentials)
-- [Kali Linux](#Kali_Linux)
-- [Information Gathering & Vulnerability Scanning](#Information_Gathering_&_Vulnerability_Scanning)
-  * Passive Information Gathering
-  * Active Information Gathering
-  * Port Scanning
-  * Enumeration
-  * HTTP Enumeration
-- [Buffer Overflows, Exploits and Shells](#Buffer_Overflows_Exploits_and_Shells)
-  * Exploits
-  * Shells
-- [File Transfers](#File_Transfers)
-- [Privilege Escalation](#Privilege_Escalation)
-  * Linux Privilege Escalation
-  * Windows Privilege Escalation
-- [Client, Web and Password Attacks](#Client_Web_and_Password_Attacks)
-  * Client Attacks
-  * Web Attacks
-  * File Inclusion Vulnerabilities
-  * Database Vulnerabilities
-  * Password Attacks
-  * Password Hash Attacks
-- [Networking, Pivoting and Tunneling](#Networking_Pivoting_and_Tunneling)
-- [The Metasploit Framework](#The_Metasploit_Framework)
-- [Bypassing Antivirus Software](#Bypassing_Antivirus_Software)
+- [Kali Linux](#Kali-Linux)
+- [Information Gathering & Vulnerability Scanning](#Information-Gathering--Vulnerability-Scanning)
+  * [Passive Information Gathering](#Passive-Information-Gathering)
+  * [Active Information Gathering](#Active-Information-Gathering)
+  * [Port Scanning](#Port-Scanning)
+  * [Enumeration](#Enumeration)
+  * [HTTP Enumeration](#HTTP-Enumeration)
+- [Buffer Overflows, Exploits and Shells](#Buffer-Overflows-Exploits-and-Shells)
+  * [Exploits](#Exploits)
+  * [Shells](#Shells)
+- [File Transfers](#File-Transfers)
+- [Privilege Escalation](#Privilege-Escalation)
+  * [Linux Privilege Escalation](#Linux-Privilege-Escalation)
+  * [Windows Privilege Escalation](#Windows-Privilege-Escalation)
+- [Client, Web and Password Attacks](#Client-Web-and-Password-Attacks)
+  * [Client Attacks](#Client-Attacks)
+  * [Web Attacks](#Web-Attacks)
+  * [File Inclusion Vulnerabilities LFI/RFI](#File-Inclusion-Vulnerabilities)
+  * [Database Vulnerabilities](#Database-Vulnerabilities)
+  * [Password Attacks](#Password-Attacks)
+  * [Password Hash Attacks](#Password-Hash-Attacks)
+- [Networking, Pivoting and Tunneling](#Networking-Pivoting-and-Tunneling)
+- [The Metasploit Framework](#The-Metasploit-Framework)
+- [Bypassing Antivirus Software](#Bypassing-Antivirus-Software)
 
 OSCP Course Review
 ================================================================================================================
