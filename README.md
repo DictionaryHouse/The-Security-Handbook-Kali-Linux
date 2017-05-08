@@ -424,8 +424,9 @@ OSCP Course Review
 -   <span id="_rg4aghc59hwr" class="anchor"><span id="_Toc480741805" class="anchor"></span></span>Port Scanning
     -----------------------------------------------------------------------------------------------------------
 *Subnet Reference Table*
-Addresses | Hosts | Netmask | Amount of a Class C
---- | --- | --- | --- 
+
+/ | Addresses | Hosts | Netmask | Amount of a Class C
+--- | --- | --- | --- | --- 
 /30 | 4 | 2 | 255.255.255.252| 1/64
 /29 | 8 | 6 | 255.255.255.248 | 1/32
 /28 | 16 | 14 | 255.255.255.240 | 1/16
