@@ -334,14 +334,14 @@ OSCP Course Review
 -   Google Hacking
 
     -   Google search to find website sub domains  
-        site:microsoft.com
-        -site:[www.microsoft.com](http://www.microsoft.com)
+        `site:microsoft.com`
+        `site:[www.microsoft.com](http://www.microsoft.com)`
 
     -   Google filetype, and intitle  
-        intitle:”netbotz appliance” “OK” -filetype:pdf
+        `intitle:”netbotz appliance” “OK” -filetype:pdf`
 
     -   Google inurl  
-        inurl:”level/15/sexec/-/show”
+        `inurl:”level/15/sexec/-/show”`
 
     -   Google Hacking Database:  
         https://www.exploit-db.com/google-hacking-database/
@@ -352,8 +352,8 @@ OSCP Course Review
 -   Email Harvesting
 
     -   Simply Email  
-        git clone https://github.com/killswitch-GUI/SimplyEmail.git  
-        ./SimplyEmail.py -all -e TARGET-DOMAIN
+        `git clone https://github.com/killswitch-GUI/SimplyEmail.git  `
+        `./SimplyEmail.py -all -e TARGET-DOMAIN`
 
 -   Netcraft
 
@@ -361,26 +361,24 @@ OSCP Course Review
         https://searchdns.netcraft.com/
 
 -   Whois Enumeration  
-    whois domain-name-here.com  
-    whois $ip
+    `whois domain-name-here.com  `
+    `whois $ip`
 
 -   Banner Grabbing
 
-    -   nc -v $ip 25
+    -   `nc -v $ip 25`
 
-    -   telnet $ip 25
+    -   `telnet $ip 25`
 
-    -   nc TARGET-IP 80
+    -   `nc TARGET-IP 80`
 
--   Recon-ng - full-featured web reconnaissance framework written in
-    Python
+-   Recon-ng - full-featured web reconnaissance framework written in Python
 
-    -   cd /opt; git clone
-        https://LaNMaSteR53@bitbucket.org/LaNMaSteR53/recon-ng.git  
-        cd /opt/recon-ng  
-        ./recon-ng  
-        show modules  
-        help
+    -   `cd /opt; git clone https://LaNMaSteR53@bitbucket.org/LaNMaSteR53/recon-ng.git  `
+        `cd /opt/recon-ng  `
+        `./recon-ng  `
+        `show modules  `
+        `help`
 
 -   <span id="_freheegw7nba" class="anchor"><span id="_Toc480741804" class="anchor"></span></span>Active Information Gathering
     --------------------------------------------------------------------------------------------------------------------------
@@ -390,36 +388,34 @@ OSCP Course Review
 -   DNS Enumeration
 
     -   Host Lookup  
-        host -t ns megacorpone.com
+        `host -t ns megacorpone.com`
 
     -   Reverse Lookup Brute Force - find domains in the same range  
-        for ip in $(seq 155 190);do host 50.7.67.$ip;done |grep -v "not
-        found"
+        `for ip in $(seq 155 190);do host 50.7.67.$ip;done |grep -v "not found"`
 
     -   Perform DNS IP Lookup  
-        dig a domain-name-here.com @nameserver
+        `dig a domain-name-here.com @nameserver`
 
     -   Perform MX Record Lookup  
-        dig mx domain-name-here.com @nameserver
+        `dig mx domain-name-here.com @nameserver`
 
     -   Perform Zone Transfer with DIG  
-        dig axfr domain-name-here.com @nameserver
+        `dig axfr domain-name-here.com @nameserver`
 
     -   DNS Zone Transfers  
         Windows DNS zone transfer  
-        nslookup -&gt; set type=any -&gt; ls -d blah.com  
+        `nslookup -&gt; set type=any -&gt; ls -d blah.com  `
         Linux DNS zone transfer  
-        dig axfr blah.com @ns1.blah.com
+        `dig axfr blah.com @ns1.blah.com`
 
     -   Dnsrecon DNS Brute Force  
-        dnsrecon -d TARGET -D /usr/share/wordlists/dnsmap.txt -t std
-        --xml ouput.xml
+        `dnsrecon -d TARGET -D /usr/share/wordlists/dnsmap.txt -t std --xml ouput.xml`
 
     -   Dnsrecon DNS List of megacorp  
-        dnsrecon -d megacorpone.com -t axfr
+        `dnsrecon -d megacorpone.com -t axfr`
 
     -   DNSEnum  
-        dnsenum zonetransfer.me
+        `dnsenum zonetransfer.me`
 
 -   <span id="_rg4aghc59hwr" class="anchor"><span id="_Toc480741805" class="anchor"></span></span>Port Scanning
     -----------------------------------------------------------------------------------------------------------
@@ -444,76 +440,74 @@ OSCP Course Review
 /16 | 65536 | 65534 | 255.255.0.0 | 256
 
     -   Set the ip address as a varble  
-        export ip=192.168.1.100  
-        nmap -A -T4 -p- $ip
+        `export ip=192.168.1.100  `
+        `nmap -A -T4 -p- $ip`
 
     -   Netcat port Scanning  
-        nc -nvv -w 1 -z $ip 3388-3390
+        `nc -nvv -w 1 -z $ip 3388-3390`
 
     -   Discover who else is on the network  
-        netdiscover
+        `netdiscover`
 
     -   Discover IP Mac and Mac vendors from ARP  
-        netdiscover -r $ip/24
+        `netdiscover -r $ip/24`
 
     -   Nmap stealth scan using SYN  
-        nmap -sS $ip
+        `nmap -sS $ip`
 
     -   Nmap stealth scan using FIN  
-        nmap -sF $ip
+        `nmap -sF $ip`
 
     -   Nmap Banner Grabbing  
-        nmap -sV -sT $ip
+        `nmap -sV -sT $ip`
 
     -   Nmap OS Fingerprinting  
-        nmap -O $ip
+        `nmap -O $ip`
 
     -   Nmap Regular Scan:  
-        nmap $ip/24
+        `nmap $ip/24`
 
     -   Enumeration Scan  
-        nmap -p 1-65535 -sV -sS -A -T4 $ip/24 -oN nmap.txt
+        `nmap -p 1-65535 -sV -sS -A -T4 $ip/24 -oN nmap.txt`
 
     -   Enumeration Scan All Ports TCP / UDP and output to a txt file  
-        nmap -oN nmap2.txt -v -sU -sS -p- -A -T4 $ip
+        `nmap -oN nmap2.txt -v -sU -sS -p- -A -T4 $ip`
 
     -   Nmap output to a file:  
-        nmap -oN nmap.txt -p 1-65535 -sV -sS -A -T4 $ip/24
+        `nmap -oN nmap.txt -p 1-65535 -sV -sS -A -T4 $ip/24`
 
     -   Quick Scan:  
-        nmap -T4 -F $ip/24
+        `nmap -T4 -F $ip/24`
 
     -   Quick Scan Plus:  
-        nmap -sV -T4 -O -F --version-light $ip/24
+        `nmap -sV -T4 -O -F --version-light $ip/24`
 
     -   Quick traceroute  
-        nmap -sn --traceroute $ip
+        `nmap -sn --traceroute $ip`
 
     -   All TCP and UDP Ports  
-        nmap -v -sU -sS -p- -A -T4 $ip
+        `nmap -v -sU -sS -p- -A -T4 $ip`
 
     -   Intense Scan:  
-        nmap -T4 -A -v $ip
+        `nmap -T4 -A -v $ip`
 
     -   Intense Scan Plus UDP  
-        nmap -sS -sU -T4 -A -v $ip/24
+        `nmap -sS -sU -T4 -A -v $ip/24`
 
     -   Intense Scan ALL TCP Ports  
-        nmap -p 1-65535 -T4 -A -v $ip/24
+        `nmap -p 1-65535 -T4 -A -v $ip/24`
 
     -   Intense Scan - No Ping  
-        nmap -T4 -A -v -Pn $ip/24
+        `nmap -T4 -A -v -Pn $ip/24`
 
     -   Ping scan  
-        nmap -sn $ip/24
+        `nmap -sn $ip/24`
 
     -   Slow Comprehensive Scan  
-        nmap -sS -sU -T4 -A -v -PE -PP -PS80,443 -PA3389 -PU40125 -PY -g
-        53 --script "default or (discovery and safe)" $ip/24
+        `nmap -sS -sU -T4 -A -v -PE -PP -PS80,443 -PA3389 -PU40125 -PY -g 53 --script "default or (discovery and safe)" $ip/24`
 
-    -   Scan with Active connect in order to weed out any spoofed ports
-        designed to troll you  
-        nmap -p1-65535 -A -T5 -sT $ip
+    -   Scan with Active connect in order to weed out any spoofed ports designed to troll you  
+        `nmap -p1-65535 -A -T5 -sT $ip`
 
 -   Enumeration
     -----------
@@ -524,68 +518,61 @@ OSCP Course Review
         [*https://nmap.org/nsedoc/categories/discovery.html*](https://nmap.org/nsedoc/categories/discovery.html)
 
     -   Nmap port version detection MAXIMUM power  
-        nmap -vvv -A --reason --script="+(safe or default) and not
-        broadcast" -p &lt;port&gt; &lt;host&gt;
+        `nmap -vvv -A --reason --script="+(safe or default) and not broadcast" -p &lt;port&gt; &lt;host&gt;`
 
     -   
 
 -   SMB Enumeration
 
     -   SMB OS Discovery  
-        nmap $ip --script smb-os-discovery.nse
-
-    -   List processes running  
-        ps -xaf
+        `nmap $ip --script smb-os-discovery.nse`
 
     -   Nmap port scan  
-        nmap -v -p 139,445 -oG smb.txt $ip-254
+        `nmap -v -p 139,445 -oG smb.txt $ip-254`
 
     -   Netbios Information Scanning  
-        nbtscan -r $ip/24
+        `nbtscan -r $ip/24`
 
     -   Nmap find exposed Netbios servers  
-        nmap -sU --script nbstat.nse -p 137 $ip
+        `nmap -sU --script nbstat.nse -p 137 $ip`
 
     -   SMB Enumeration Tools  
-        nmblookup -A $ip  
-        smbclient //MOUNT/share -I $ip -N  
-        rpcclient -U "" $ip  
-        enum4linux $ip  
-        enum4linux -a $ip
+        `nmblookup -A $ip  `
+        `smbclient //MOUNT/share -I $ip -N  `
+        `rpcclient -U "" $ip  `
+        `enum4linux $ip  `
+        `enum4linux -a $ip`
 
     -   SMB Finger Printing  
-        smbclient -L //$ip
+        `smbclient -L //$ip`
 
     -   Nmap Scan for Open SMB Shares  
-        nmap -T4 -v -oA shares --script smb-enum-shares --script-args
-        smbuser=username,smbpass=password -p445 $ip/24
+        `nmap -T4 -v -oA shares --script smb-enum-shares --script-args smbuser=username,smbpass=password -p445 $ip/24`
 
     -   Nmap scans for vulnerable SMB Servers  
-        nmap -v -p 445 --script=smb-check-vulns --script-args=unsafe=1
-        $ip
+        `nmap -v -p 445 --script=smb-check-vulns --script-args=unsafe=1 $ip`
 
     -   Nmap List all SMB scripts installed  
-        ls -l /usr/share/nmap/scripts/smb\*
+        `ls -l /usr/share/nmap/scripts/smb\*`
 
     -   Enumerate SMB Users
 
-        -   nmap -sU -sS --script=smb-enum-users -p U:137,T:139 $ip-14
+        -   `nmap -sU -sS --script=smb-enum-users -p U:137,T:139 $ip-14`
 
-        -   python /usr/share/doc/python-impacket-doc/examples  
-            /samrdump.py $ip
+        -   `python /usr/share/doc/python-impacket-doc/examples /samrdump.py $ip`
 
     -   RID Cycling - Null Sessions  
         [*https://www.trustedsec.com/march-2013/new-tool-release-rpc\_enum-rid-cycling-attack/*](https://www.trustedsec.com/march-2013/new-tool-release-rpc_enum-rid-cycling-attack/)
 
-        -   ridenum.py $ip 500 50000 dict.txt
+        -   `ridenum.py $ip 500 50000 dict.txt`
 
-        -   use auxiliary/scanner/smb/smb\_lookupsid
+        -   `use auxiliary/scanner/smb/smb\_lookupsid`
 
     -   Manual Null Session Testing
 
-        -   Windows: net use \\\\$ip\\IPC$ "" /u:""
+        -   Windows: `net use \\\\$ip\\IPC$ "" /u:""`
 
-        -   Linux: smbclient -L //$ip
+        -   Linux: `smbclient -L //$ip`
 
 -   LLMNR / NBT-NS Spoofing - Steal credentials off the network.
 
@@ -598,39 +585,38 @@ OSCP Course Review
         auxiliary/server/capture/http\_ntlm
 
     -   Using Responder to Steal Creds  
-        git clone https://github.com/SpiderLabs/Responder.git  
-        python Responder.py -i local-ip -I eth0
+        `git clone https://github.com/SpiderLabs/Responder.git  `
+        `python Responder.py -i local-ip -I eth0`
 
 -   SMTP Enumeration - Mail Severs
 
     -   Verify SMTP port using Netcat  
-        nc -nv $ip 25
+        `nc -nv $ip 25`
 
 -   SNMP Enumeration -Simple Network Management Protocol
 
     -   Fix SNMP output values so they are human readable  
-        apt-get install snmp-mibs-downloader download-mibs  
-        echo "" &gt; /etc/snmp/snmp.conf
+        `apt-get install snmp-mibs-downloader download-mibs  `
+        `echo "" &gt; /etc/snmp/snmp.conf`
 
     -   SNMP Enumeration Commands
 
-        -   snmpcheck -t $ip -c public
+        -   `snmpcheck -t $ip -c public`
 
-        -   snmpwalk -c public -v1 $ip 1|
+        -   `snmpwalk -c public -v1 $ip 1|`
 
-        -   grep hrSWRunName|cut -d\* \* -f
+        -   `grep hrSWRunName|cut -d\* \* -f`
 
-        -   snmpenum -t $ip
+        -   `snmpenum -t $ip`
 
-        -   onesixtyone -c names -i hosts
+        -   `onesixtyone -c names -i hosts`
 
     -   SNMPv3 Enumeration  
-        nmap -sV -p 161 --script=snmp-info $ip/24
+        `nmap -sV -p 161 --script=snmp-info $ip/24`
 
     -   Automate the username enumeration process for SNMPv3:  
-        apt-get install snmp snmp-mibs-downloader  
-        wget
-        <https://raw.githubusercontent.com/raesene/TestingScripts/master/snmpv3enum.rb>
+        `apt-get install snmp snmp-mibs-downloader  `
+        `wget <https://raw.githubusercontent.com/raesene/TestingScripts/master/snmpv3enum.rb>`
 
     -   SNMP Default Credentials  
         /usr/share/metasploit-framework/data/wordlists/snmp\_default\_pass.txt
@@ -638,24 +624,27 @@ OSCP Course Review
 -   Linux OS Enumeration
 
     -   List all SUID files  
-        find / -perm -4000 2&gt;/dev/null
+        `find / -perm -4000 2&gt;/dev/null`
 
     -   Determine the current version of Linux  
-        cat /etc/issue
+        `cat /etc/issue`
 
     -   Determine more information about the environment  
-        uname -a
+        `uname -a`
+        
+    -   List processes running  
+        `ps -xaf`
 
     -   List the allowed (and forbidden) commands for the invoking use  
-        sudo -l
+        `sudo -l`
 
     -   List iptables rules  
-        iptables --table nat --list  
+        `iptables --table nat --list  
         iptables -vL -t filter  
         iptables -vL -t nat  
         iptables -vL -t mangle  
         iptables -vL -t raw  
-        iptables -vL -t security
+        iptables -vL -t security`
 
 -   Vulnerability Scanning with Nmap
 
@@ -663,14 +652,14 @@ OSCP Course Review
     [*https://nmap.org/nsedoc/categories/exploit.html*](https://nmap.org/nsedoc/categories/exploit.html)
 
 -   Nmap search through vulnerability scripts  
-    cd /usr/share/nmap/scripts/  
-    ls -l \*vuln\*
+    `cd /usr/share/nmap/scripts/  
+    ls -l \*vuln\*`
 
 -   Nmap search through Nmap Scripts for a specific keyword  
-    ls /usr/share/nmap/scripts/\* | grep ftp
+    `ls /usr/share/nmap/scripts/\* | grep ftp`
 
 -   Scan for vulnerable exploits with nmap  
-    nmap --script exploit -Pn $ip
+    `nmap --script exploit -Pn $ip`
 
 -   NMap Auth Scripts  
     [*https://nmap.org/nsedoc/categories/auth.html*](https://nmap.org/nsedoc/categories/auth.html)
@@ -679,87 +668,78 @@ OSCP Course Review
     [*https://nmap.org/nsedoc/categories/vuln.html*](https://nmap.org/nsedoc/categories/vuln.html)
 
 -   NMap DOS Scanning  
-    nmap --script dos -Pn $ip  
+    `nmap --script dos -Pn $ip  
     NMap Execute DOS Attack  
     nmap --max-parallelism 750 -Pn --script http-slowloris --script-args
-    http-slowloris.runforever=true
+    http-slowloris.runforever=true`
 
 -   Scan for coldfusion web vulnerabilities  
-    nmap -v -p 80 --script=http-vuln-cve2010-2861 $ip
+    `nmap -v -p 80 --script=http-vuln-cve2010-2861 $ip`
 
 -   Anonymous FTP dump with Nmap  
-    nmap -v -p 21 --script=ftp-anon.nse $ip-254
+    `nmap -v -p 21 --script=ftp-anon.nse $ip-254`
 
 -   SMB Security mode scan with Nmap  
-    nmap -v -p 21 --script=ftp-anon.nse $ip-254
+    `nmap -v -p 21 --script=ftp-anon.nse $ip-254`
 
 -   File Enumeration
 
     -   Find UID 0 files root execution
 
-    -   /usr/bin/find / -perm -g=s -o -perm -4000 ! -type l -maxdepth 3
-        -exec ls -ld {} \\; 2&gt;/dev/null
+    -   `/usr/bin/find / -perm -g=s -o -perm -4000 ! -type l -maxdepth 3 -exec ls -ld {} \\; 2&gt;/dev/null`
 
     -   Get handy linux file system enumeration script (/var/tmp)  
-        wget <https://highon.coffee/downloads/linux-local-enum.sh>  
-        chmod +x ./linux-local-enum.sh  
-        ./linux-local-enum.sh
+        `wget <https://highon.coffee/downloads/linux-local-enum.sh>  `
+        `chmod +x ./linux-local-enum.sh  `
+        `./linux-local-enum.sh`
 
     -   Find executable files updated in August  
-        find / -executable -type f 2&gt; /dev/null | egrep -v
-        "^/bin|^/var|^/etc|^/usr" | xargs ls -lh | grep Aug
+        `find / -executable -type f 2&gt; /dev/null | egrep -v "^/bin|^/var|^/etc|^/usr" | xargs ls -lh | grep Aug`
 
     -   Find a specific file on linux  
-        find /. -name suid\*
+        `find /. -name suid\*`
 
     -   Find all the strings in a file  
-        strings &lt;filename&gt;
+        `strings &lt;filename&gt;`
 
     -   Determine the type of a file  
-        file &lt;filename&gt;<span id="_y3fyiaz7kx9m"
-        class="anchor"></span>
+        `file &lt;filename&gt;`
 
 -   HTTP Enumeration
     ----------------
 
     -   Search for folders with gobuster:  
-        gobuster -w /usr/share/wordlists/dirb/common.txt -u $ip
+        `gobuster -w /usr/share/wordlists/dirb/common.txt -u $ip`
 
-    -   OWasp DirBuster - Http folder enumeration - can take a
-        dictionary file
+    -   OWasp DirBuster - Http folder enumeration - can take a dictionary file
 
     -   Dirb - Directory brute force finding using a dictionary file  
-        dirb http://$ip/ wordlist.dict  
-        dirb <http://vm/>  
+        `dirb http://$ip/ wordlist.dict  `
+        `dirb <http://vm/>  `
           
         Dirb against a proxy
 
-    -   dirb [http://$ip/](http://172.16.0.19/) -p $ip:3129
+    -   `dirb [http://$ip/](http://172.16.0.19/) -p $ip:3129`
 
     -   Nikto  
-        nikto -h $ip
+        `nikto -h $ip`
 
     -   HTTP Enumeration with NMAP  
-        nmap --script=http-enum -p80 -n $ip/24
+        `nmap --script=http-enum -p80 -n $ip/24`
 
     -   Nmap Check the server methods  
-        nmap --script http-methods --script-args
-        http-methods.url-path='/test' $ip
+        `nmap --script http-methods --script-args http-methods.url-path='/test' $ip`
 
     -   Get Options available from web server
+         `curl -vX OPTIONS vm/test`
 
-> curl -vX OPTIONS vm/test
+      -   Uniscan directory finder:  
+          `uniscan -qweds -u <http://vm/>`
 
--   Uniscan directory finder:  
-    uniscan -qweds -u <http://vm/>
-
--   Wfuzz - The web brute forcer  
-    wfuzz -c -w /usr/share/wfuzz/wordlist/general/megabeast.txt
-    $ip:60080/?FUZZ=test  
-    wfuzz -c --hw 114 -w /usr/share/wfuzz/wordlist/general/megabeast.txt
-    $ip:60080/?page=FUZZ  
-    wfuzz -c -w /usr/share/wfuzz/wordlist/general/common.txt
-    "$ip:60080/?page=mailer&mail=FUZZ"
+      -   Wfuzz - The web brute forcer  
+          `wfuzz -c -w /usr/share/wfuzz/wordlist/general/megabeast.txt $ip:60080/?FUZZ=test  `
+          `wfuzz -c --hw 114 -w /usr/share/wfuzz/wordlist/general/megabeast.txt $ip:60080/?page=FUZZ  `
+          `wfuzz -c -w /usr/share/wfuzz/wordlist/general/common.txt "$ip:60080/?page=mailer&mail=FUZZ"`
 
 <!-- -->
 
