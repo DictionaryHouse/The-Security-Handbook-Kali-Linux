@@ -296,75 +296,75 @@ export ip=192.168.1.100`**_
 /17 | 32768 | 32766 | 255.255.128.0 | 128
 /16 | 65536 | 65534 | 255.255.0.0 | 256
 
-    -   Set the ip address as a varble  
-        `export ip=192.168.1.100  `
-        `nmap -A -T4 -p- $ip`
+ -   Set the ip address as a varble  
+     `export ip=192.168.1.100  `
+     `nmap -A -T4 -p- $ip`
 
-    -   Netcat port Scanning  
-        `nc -nvv -w 1 -z $ip 3388-3390`
+ -   Netcat port Scanning  
+     `nc -nvv -w 1 -z $ip 3388-3390`
 
-    -   Discover who else is on the network  
-        `netdiscover`
+ -   Discover who else is on the network  
+     `netdiscover`
 
-    -   Discover IP Mac and Mac vendors from ARP  
-        `netdiscover -r $ip/24`
+ -   Discover IP Mac and Mac vendors from ARP  
+     `netdiscover -r $ip/24`
 
-    -   Nmap stealth scan using SYN  
-        `nmap -sS $ip`
+ -   Nmap stealth scan using SYN  
+     `nmap -sS $ip`
 
-    -   Nmap stealth scan using FIN  
-        `nmap -sF $ip`
+ -   Nmap stealth scan using FIN  
+     `nmap -sF $ip`
 
-    -   Nmap Banner Grabbing  
-        `nmap -sV -sT $ip`
+ -   Nmap Banner Grabbing  
+     `nmap -sV -sT $ip`
 
-    -   Nmap OS Fingerprinting  
-        `nmap -O $ip`
+ -   Nmap OS Fingerprinting  
+     `nmap -O $ip`
 
-    -   Nmap Regular Scan:  
-        `nmap $ip/24`
+ -   Nmap Regular Scan:  
+     `nmap $ip/24`
 
-    -   Enumeration Scan  
-        `nmap -p 1-65535 -sV -sS -A -T4 $ip/24 -oN nmap.txt`
+ -   Enumeration Scan  
+     `nmap -p 1-65535 -sV -sS -A -T4 $ip/24 -oN nmap.txt`
 
-    -   Enumeration Scan All Ports TCP / UDP and output to a txt file  
-        `nmap -oN nmap2.txt -v -sU -sS -p- -A -T4 $ip`
+ -   Enumeration Scan All Ports TCP / UDP and output to a txt file  
+     `nmap -oN nmap2.txt -v -sU -sS -p- -A -T4 $ip`
 
-    -   Nmap output to a file:  
-        `nmap -oN nmap.txt -p 1-65535 -sV -sS -A -T4 $ip/24`
+ -   Nmap output to a file:  
+     `nmap -oN nmap.txt -p 1-65535 -sV -sS -A -T4 $ip/24`
 
-    -   Quick Scan:  
-        `nmap -T4 -F $ip/24`
+ -   Quick Scan:  
+     `nmap -T4 -F $ip/24`
 
-    -   Quick Scan Plus:  
-        `nmap -sV -T4 -O -F --version-light $ip/24`
+ -   Quick Scan Plus:  
+     `nmap -sV -T4 -O -F --version-light $ip/24`
 
-    -   Quick traceroute  
-        `nmap -sn --traceroute $ip`
+ -   Quick traceroute  
+     `nmap -sn --traceroute $ip`
 
-    -   All TCP and UDP Ports  
-        `nmap -v -sU -sS -p- -A -T4 $ip`
+ -   All TCP and UDP Ports  
+     `nmap -v -sU -sS -p- -A -T4 $ip`
 
-    -   Intense Scan:  
-        `nmap -T4 -A -v $ip`
+ -   Intense Scan:  
+     `nmap -T4 -A -v $ip`
 
-    -   Intense Scan Plus UDP  
-        `nmap -sS -sU -T4 -A -v $ip/24`
+ -   Intense Scan Plus UDP  
+     `nmap -sS -sU -T4 -A -v $ip/24`
 
-    -   Intense Scan ALL TCP Ports  
-        `nmap -p 1-65535 -T4 -A -v $ip/24`
+ -   Intense Scan ALL TCP Ports  
+     `nmap -p 1-65535 -T4 -A -v $ip/24`
 
-    -   Intense Scan - No Ping  
-        `nmap -T4 -A -v -Pn $ip/24`
+ -   Intense Scan - No Ping  
+     `nmap -T4 -A -v -Pn $ip/24`
 
-    -   Ping scan  
-        `nmap -sn $ip/24`
+ -   Ping scan  
+     `nmap -sn $ip/24`
 
-    -   Slow Comprehensive Scan  
-        `nmap -sS -sU -T4 -A -v -PE -PP -PS80,443 -PA3389 -PU40125 -PY -g 53 --script "default or (discovery and safe)" $ip/24`
+ -   Slow Comprehensive Scan  
+     `nmap -sS -sU -T4 -A -v -PE -PP -PS80,443 -PA3389 -PU40125 -PY -g 53 --script "default or (discovery and safe)" $ip/24`
 
-    -   Scan with Active connect in order to weed out any spoofed ports designed to troll you  
-        `nmap -p1-65535 -A -T5 -sT $ip`
+ -   Scan with Active connect in order to weed out any spoofed ports designed to troll you  
+     `nmap -p1-65535 -A -T5 -sT $ip`
 
 -   Enumeration
     -----------
