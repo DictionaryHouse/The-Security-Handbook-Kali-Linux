@@ -1,5 +1,4 @@
 # OSCP-Survival-Guide
-Kali Linux Offensive Security Certified Professional Survival Exam Guide Playbook
 <pre>
    _____ _____ _____ ______   _____                  _            _   _____       _     _      
   |  _  /  ___/  __ \| ___ \ /  ___|                (_)          | | |  __ \     (_)   | |     
@@ -8,15 +7,11 @@ Kali Linux Offensive Security Certified Professional Survival Exam Guide Playboo
   \ \_/ /\__/ / \__/\| |     /\__/ / |_| | |   \ V /| |\ V / (_| | | | |_\ \ |_| | | (_| |  __/
    \___/\____/ \____/\_|     \____/ \__,_|_|    \_/ |_| \_/ \__,_|_|  \____/\__,_|_|\__,_|\___|
 </pre>
-
+Kali Linux Offensive Security Certified Professional Survival Exam Guide Playbook
  _**`NOTE: This document reffers to the target ip as the export variable $ip.  To set this value on the command line use the following syntax:
 export ip=192.168.1.100`**_  
 
 ## Table of Contents
-- [OSCP Course Review](#oscp-course-review)
-- [OSCP Inspired VMs and Walkthroughs](#oscp-inspired-vms-and-walkthroughs)
-- [Cheat Sheets](#cheat-sheets)
-- [Essentials](#essentials)
 - [Kali Linux](#kali-linux)
 - [Information Gathering & Vulnerability Scanning](#information-gathering--vulnerability-scanning)
   * [Passive Information Gathering](#passive-information-gathering)
