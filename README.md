@@ -19,7 +19,7 @@ export ip=192.168.1.100`**_
   * [Port Scanning](#port-scanning)
   * [Enumeration](#enumeration)
   * [HTTP Enumeration](#http-enumeration)
-- [Buffer Overflows and Exploits](#buffer-overflows-exploits-and-shells)
+- [Buffer Overflows and Exploits](#buffer-overflows-and-exploits)
 - [Shells](#shells)
 - [File Transfers](#file-transfers)
 - [Privilege Escalation](#privilege-escalation)
@@ -647,7 +647,7 @@ export ip=192.168.1.100`**_
     -   Login at:  
         https://$ip:9392
 
-<span id="_gpeqrdf839p2" class="anchor"><span id="_Toc480741808" class="anchor"></span></span>Buffer Overflows, Exploits and Shells
+Buffer Overflows and Exploits
 ===================================================================================================================================
 
 -   DEP and ASLR - Data Execution Prevention (DEP) and Address Space
@@ -753,7 +753,7 @@ export ip=192.168.1.100`**_
         nc -v $ip 4444
 
    Exploits
-    ------------------------------------------------------------------------------------------------------
+   ------------------------------------------------------------------------------------------------------
 
 -   Searching for Exploits
 
