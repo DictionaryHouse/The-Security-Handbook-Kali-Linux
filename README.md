@@ -1134,7 +1134,9 @@ export ip=192.168.1.100`**_
 
     -   Local Privilege Escalation Exploit in Windows
 
-    -   Spawning a TTY Shell - Break out of Jail or limited sh ell
+    -   Spawning a TTY Shell - Break out of Jail or limited shell
+         You should almost always upgrade your shell after taking control of an apache or www user.
+        (For example when you encounter an error message when trying to run an exploit sh: no job control in this shell )
         (hint: sudo -l to see what you can run)
 
         -   python -c 'import pty; pty.spawn("/bin/sh")'
