@@ -751,25 +751,7 @@ Buffer Overflows and Exploits
 
     -   Connect to the shell with netcat:  
         nc -v $ip 4444
-
-   Exploits
-   ------------------------------------------------------------------------------------------------------
-
--   Searching for Exploits
-
-    -   SearchSploit  
-        searchsploit –uncsearchsploit apache 2.2  
-        searchsploit "Linux Kernel"  
-        searchsploit linux 2.6 | grep -i ubuntu | grep local  
-        searchsploit slmail
-
-    -   Kernel Exploit Suggestions for Kernel Version 3.0.0  
-        ./usr/share/linux-exploit-suggester/Linux\_Exploit\_Suggester.pl
-        -k 3.0.0
-
--   Precompiled Linux Kernel Exploits  
-    [*https://www.kernel-exploits.com/*](https://www.kernel-exploits.com/)
-
+        
 Shells
 ===================================================================================================================================
 
@@ -1173,8 +1155,24 @@ File Transfers
     `cd\`
     `dir /b /s proof.txt`
     `type c:\pathto\proof.txt`
+    
 
-<span id="_pht6nag264ji" class="anchor"><span id="_Toc480741816" class="anchor"></span></span>Client, Web and Password Attacks
+-   Searching for Exploits
+
+    -   SearchSploit  
+        searchsploit –uncsearchsploit apache 2.2  
+        searchsploit "Linux Kernel"  
+        searchsploit linux 2.6 | grep -i ubuntu | grep local  
+        searchsploit slmail
+
+    -   Kernel Exploit Suggestions for Kernel Version 3.0.0  
+        ./usr/share/linux-exploit-suggester/Linux\_Exploit\_Suggester.pl
+        -k 3.0.0
+
+-   Precompiled Linux Kernel Exploits  - ***Super handy if GCC is not installed on the target machine!***
+    [*https://www.kernel-exploits.com/*](https://www.kernel-exploits.com/)    
+
+Client, Web and Password Attacks
 ==============================================================================================================================
 
 -   <span id="_pcjm0n4oppqx" class="anchor"><span id="_Toc480741817" class="anchor"></span></span>Client Attacks
