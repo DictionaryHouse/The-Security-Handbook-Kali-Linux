@@ -1002,6 +1002,9 @@ export ip=192.168.1.100`**_
 
 -   Try the obvious - Maybe the user can sudo to root:  
     sudo su
+    
+-   Highon.coffee Linux Local Enum 
+    `wget https://highon.coffee/downloads/linux-local-enum.sh`
 
 -   Basic Linux Privilege Escalation  
     [*https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/*](https://blog.g0tmi1k.com/2011/08/basic-linux-privilege-escalation/)
