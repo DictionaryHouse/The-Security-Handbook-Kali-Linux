@@ -1120,6 +1120,9 @@ Privilege Escalation
 -   Windows Privilege Escalation
     --------------------------------------------------------------------------------------------------------------------------
 
+-   Windows Privilege Escalation resource
+    http://www.fuzzysecurity.com/tutorials/16.html
+
 -   Try the getsystem command using meterpreter - rarely works but is worth a try.
     `meterpreter > getsystem`
 
@@ -1129,6 +1132,9 @@ Privilege Escalation
 -   Windows MS11-080 - http://www.exploit-db.com/exploits/18176/  
     python pyinstaller.py --onefile ms11-080.py  
     mx11-080.exe -O XP
+    
+-   Powershell Priv Escalation Tools
+    https://github.com/PowerShellMafia/PowerSploit/tree/master/Privesc
 
 -   Windows Service Configuration Viewer - Check for misconfigurations
     in services that can lead to privilege escalation. You can replace
@@ -1175,8 +1181,7 @@ Privilege Escalation
 -   Find and display the proof.txt or flag.txt - get the loot!
     `#meterpreter  >     run  post/windows/gather/win_privs`
     
-    `cd\`
-    `dir /b /s proof.txt`
+    `cd\ & dir /b /s proof.txt`
     `type c:\pathto\proof.txt`
     
 
