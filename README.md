@@ -1120,6 +1120,9 @@ Privilege Escalation
 -   Windows Privilege Escalation
     --------------------------------------------------------------------------------------------------------------------------
 
+-   Try the getsystem command using meterpreter - rarely works but is worth a try.
+    `meterpreter > getsystem`
+
 -   Metasploit Meterpreter Privilege Escalation Guide
     https://www.offensive-security.com/metasploit-unleashed/privilege-escalation/
 
