@@ -1173,6 +1173,8 @@ Privilege Escalation
         riBZpPtHOGtVk+SdLOmJ6xiNgFH6Gp45BoP3I6AnPgZ1IfxtgI67qqZfgh78kBZB
         
 -   Find and display the proof.txt or flag.txt - get the loot!
+    `#meterpreter  >     run  post/windows/gather/win_privs`
+    
     `cd\`
     `dir /b /s proof.txt`
     `type c:\pathto\proof.txt`
