@@ -1120,6 +1120,9 @@ Privilege Escalation
 -   Windows Privilege Escalation
     --------------------------------------------------------------------------------------------------------------------------
 
+-   Metasploit Meterpreter Privilege Escalation Guide
+    https://www.offensive-security.com/metasploit-unleashed/privilege-escalation/
+
 -   Windows MS11-080 - http://www.exploit-db.com/exploits/18176/  
     python pyinstaller.py --onefile ms11-080.py  
     mx11-080.exe -O XP
