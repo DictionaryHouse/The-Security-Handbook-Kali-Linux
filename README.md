@@ -440,10 +440,6 @@ Information Gathering & Vulnerability Scanning
         auxiliary/server/capture/smb  
         auxiliary/server/capture/http\_ntlm
 
-    -   Using Responder to Steal Creds  
-        `git clone https://github.com/SpiderLabs/Responder.git  `
-        `python Responder.py -i local-ip -I eth0`
-
 -   SMTP Enumeration - Mail Severs
 
     -   Verify SMTP port using Netcat  
