@@ -430,16 +430,6 @@ Information Gathering & Vulnerability Scanning
 
         -   Linux: `smbclient -L //$ip`
 
--   LLMNR / NBT-NS Spoofing - Steal credentials off the network.
-
-    -   Spoof / poison LLMNR / NetBIOS requests:  
-        auxiliary/spoof/llmnr/llmnr\_response  
-        auxiliary/spoof/nbns/nbns\_response
-
-    -   Capture the hashes:  
-        auxiliary/server/capture/smb  
-        auxiliary/server/capture/http\_ntlm
-
 -   SMTP Enumeration - Mail Severs
 
     -   Verify SMTP port using Netcat  
