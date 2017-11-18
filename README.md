@@ -1,8 +1,7 @@
-# Offensive Security Handbook
+# The Security Handbook
 
 This repo is based on the original works by frizb, see Credits.md for further information.
 
-Kali Linux Offensive Security Certified Professional Survival Exam Guide Playbook
  _**`NOTE: This document reffers to the target ip as the export variable $ip.  To set this value on the command line use the following syntax:
 export ip=192.168.1.100`**_  
 
